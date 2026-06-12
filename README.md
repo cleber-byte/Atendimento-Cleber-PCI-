@@ -1,5 +1,3 @@
-# Atendimento-Cleber-PCI-
-ATENDIMENTO E MONITORAMENTO PCI 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -21,12 +19,12 @@ ATENDIMENTO E MONITORAMENTO PCI
         </div>
         <div class="flex gap-3">
             <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-center min-w-[150px]">
-                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-0.5">Fechamentos Ativos</span>
-                <span class="text-xs text-emerald-400 font-bold font-mono">2 PROPOSTAS NA MESA</span>
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-0.5">Foco do Dia</span>
+                <span class="text-xs text-amber-400 font-bold font-mono">3 REUNIOÕES / FECHAMENTOS</span>
             </div>
             <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-center min-w-[160px]">
                 <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-0.5">Sincronização Base</span>
-                <span class="text-xs text-slate-200 font-mono font-bold">11/06/2026 - Atualizado</span>
+                <span class="text-xs text-emerald-400 font-mono font-bold">12/06/2026 - 09h20</span>
             </div>
         </div>
     </div>
@@ -34,28 +32,27 @@ ATENDIMENTO E MONITORAMENTO PCI
     <div class="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-6">
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md">
             <span class="text-[9px] uppercase font-bold tracking-wider text-slate-400 block mb-0.5">1. Total Leads</span>
-            <div class="text-2xl font-black text-white">46</div>
-            <p class="text-[9px] text-slate-500">Base Bruta Captada</p>
+            <div class="text-2xl font-black text-white">49</div>
+            <p class="text-[9px] text-slate-500">Base Bruta (+3 Hoje)</p>
         </div>
-        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-blue-500">
+        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-blue-500 bg-blue-950/5">
             <span class="text-[9px] uppercase font-bold tracking-wider text-blue-400 block mb-0.5">2. Contato Inicial</span>
-            <div class="text-2xl font-black text-white">12</div>
-            <p class="text-[9px] text-slate-500">Giro de Cadência (26%)</p>
+            <div class="text-2xl font-black text-blue-400">14</div>
+            <p class="text-[9px] text-slate-400">Giro de Cadência Ativo</p>
         </div>
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-indigo-500">
             <span class="text-[9px] uppercase font-bold tracking-wider text-indigo-400 block mb-0.5">3. Atendimento</span>
-            <div class="text-2xl font-black text-white">16</div>
-            <p class="text-[9px] text-slate-500">Fila de Qualificação (34%)</p>
+            <div class="text-2xl font-black text-white">17</div>
+            <p class="text-[9px] text-slate-500">Qualificação Sólida</p>
         </div>
-        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-amber-500 bg-amber-950/5">
+        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-amber-500 bg-amber-950/10">
             <span class="text-[9px] uppercase font-bold tracking-wider text-amber-400 block mb-0.5">4. Agendamento</span>
             <div class="text-2xl font-black text-amber-400">1</div>
-            <p class="text-[9px] text-amber-500">Luciana (Amanhã 16h)</p>
+            <p class="text-[9px] text-amber-500">Luciana (HOJE 16h00)</p>
         </div>
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-purple-500">
-            <span class="text-[9px] uppercase font-bold tracking-wider text-purple-400 block mb-0.5">5. Reunião Realizada</span>
-            <div class="text-2xl font-black text-white">1</div>
-            <p class="text-[9px] text-slate-500">Histórico Concluído</p>
+            <span class="text-2xl font-black text-white">1</span>
+            <p class="text-[9px] text-slate-500">Histórico Mapeado</p>
         </div>
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-emerald-500 bg-emerald-950/10">
             <span class="text-[9px] uppercase font-bold tracking-wider text-emerald-400 block mb-0.5">6. Venda / Proposta</span>
@@ -72,35 +69,27 @@ ATENDIMENTO E MONITORAMENTO PCI
             </h3>
             <div class="space-y-3.5">
                 <div>
-                    <div class="flex justify-between text-xs mb-1 font-mono"><span>Lead ➔ Contato Inicial (Taxa de Ativação)</span><span class="text-emerald-400 font-bold">100%</span></div>
+                    <div class="flex justify-between text-xs mb-1 font-mono"><span>Lead ➔ Contato Inicial (Taxa de Entrada)</span><span class="text-emerald-400 font-bold">100%</span></div>
                     <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-blue-500 to-indigo-500 h-full" style="width: 100%"></div></div>
                 </div>
                 <div>
-                    <div class="flex justify-between text-xs mb-1 font-mono"><span>Contato Inicial ➔ Atendimento (Taxa de Resposta)</span><span class="text-emerald-400 font-bold">57%</span></div>
-                    <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden"><div class="bg-indigo-500 h-full" style="width: 57%"></div></div>
-                </div>
-                <div>
-                    <div class="flex justify-between text-xs mb-1 font-mono"><span>Atendimento ➔ Agendamento (Taxa de Conversão)</span><span class="text-amber-400 font-bold">6.25%</span></div>
-                    <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden"><div class="bg-amber-500 h-full" style="width: 6.25%"></div></div>
-                </div>
-                <div>
-                    <div class="flex justify-between text-xs mb-1 font-mono"><span>Volume em Negociação Final / Proposta</span><span class="text-emerald-400 font-bold">2 Contratos Ativos</span></div>
-                    <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full" style="width: 100%"></div></div>
+                    <div class="flex justify-between text-xs mb-1 font-mono"><span>Contato Inicial ➔ Atendimento (Aproveitamento)</span><span class="text-emerald-400 font-bold">54.8%</span></div>
+                    <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden"><div class="bg-indigo-500 h-full" style="width: 54.8%"></div></div>
                 </div>
             </div>
         </div>
 
         <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-xl flex flex-col justify-between">
             <div>
-                <h3 class="text-xs font-black text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-file-invoice-dollar"></i> Tração de Fechamentos Recalculada
+                <h3 class="text-xs font-black text-blue-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-bolt"></i> Alerta de Tráfego Diário
                 </h3>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                    O encerramento do dia apresenta excelente eficiência nas pontas do funil. <strong class="text-white">Fernanda Braz</strong> avançou para a etapa de Proposta após validação financeira positiva, dividindo o foco de fechamento imediato com <strong class="text-emerald-400">Jackson Baiano</strong>. 
+                    Entrada de 3 novos leads na base (<strong class="text-white">André, Marcella e Márcia</strong>). Encaminhados imediatamente para a esteira de Contato Inicial para blindagem da cadência de 24 horas.
                 </p>
             </div>
             <div class="text-[10px] text-slate-500 font-mono border-t border-slate-800 pt-3 mt-3">
-                Preparação para a mesa de amanhã às 16h00 (Luciana) concluída.
+                Foco total na agenda de fechamentos de sexta-feira.
             </div>
         </div>
 
@@ -111,58 +100,72 @@ ATENDIMENTO E MONITORAMENTO PCI
         <div class="lg:col-span-2 space-y-4">
             <div class="bg-slate-900 rounded-xl border border-slate-800 shadow-xl overflow-hidden">
                 <div class="bg-slate-900 px-4 py-3 border-b border-slate-800">
-                    <h3 class="text-xs font-black text-emerald-400 uppercase tracking-wider"><i class="fa-solid fa-gavel mr-1"></i> Propostas e Reuniões Blindadas</h3>
+                    <h3 class="text-xs font-black text-emerald-400 uppercase tracking-wider"><i class="fa-solid fa-gavel mr-1"></i> Bloco de Execução Crítica - Sexta-Feira</h3>
                 </div>
                 <div class="p-4 space-y-3 text-xs">
                     <div class="flex justify-between items-start bg-emerald-950/20 p-3 rounded-lg border border-emerald-900/30">
                         <div>
-                            <span class="font-bold text-white block">Jackson Baiano (Proposta Comercial Enviada)</span>
-                            <span class="text-slate-400 text-[11px]">Aguardando validação da remessa de liberação de acessos do dia. Foco em colher assinatura.</span>
+                            <span class="font-bold text-white block">🔥 Jackson Baiano [Proposta de Contrato]</span>
+                            <span class="text-slate-400 text-[11px]">Etapa final. Cobrar assinatura e geração do Pix de setup antes do fechamento bancário.</span>
                         </div>
-                        <span class="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-mono font-bold">FECHAMENTO</span>
+                        <span class="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-mono font-bold">URGENTE HOJE</span>
                     </div>
                     <div class="flex justify-between items-start bg-emerald-950/20 p-3 rounded-lg border border-emerald-900/30">
                         <div>
-                            <span class="font-bold text-white block">Fernanda Braz (Minuta Customizada)</span>
-                            <span class="text-slate-400 text-[11px]">Alinhamento de entrada financeira para ativação do setup e do Onboarding de processos.</span>
+                            <span class="font-bold text-white block">🔥 Fernanda Braz [Negociação de Entrada]</span>
+                            <span class="text-slate-400 text-[11px]">Apresentar a contraproposta inteligente de 6k + 8x (R$ 3.600+ de desconto real).</span>
                         </div>
-                        <span class="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-mono font-bold">ENTRADA CAIXA</span>
+                        <span class="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-mono font-bold">CONTRAOFERTA</span>
                     </div>
                     <div class="flex justify-between items-start bg-amber-950/20 p-3 rounded-lg border border-amber-900/30">
                         <div>
-                            <span class="font-bold text-white block">Sexta-Feira, 12/06 - 16h00: Luciana + Sócio-Diretor (Zoom)</span>
-                            <span class="text-slate-400 text-[11px]">Diagnóstico operacional focado em estruturar a segunda imobiliária deles. Alinhamento objetivo travado.</span>
+                            <span class="font-bold text-white block">⭐ Luciana + Sócio-Diretor (HOJE - 16h00)</span>
+                            <span class="text-slate-400 text-[11px]">Sala confirmada no Meet. Marido "vendedor raiz" participando. Briefing técnico enviado ao Diretor.</span>
                         </div>
-                        <span class="bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded text-[10px] font-mono font-bold">AMANHÃ 16h00</span>
+                        <span class="bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded text-[10px] font-mono font-bold">HOJE 16h00</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="space-y-4">
+            
             <div class="bg-slate-900 rounded-xl border border-slate-800 shadow-xl overflow-hidden">
                 <div class="bg-slate-900 px-4 py-3 border-b border-slate-800">
-                    <h3 class="text-xs font-black text-indigo-400 uppercase tracking-wider">Mapeamento Atendimento (16)</h3>
+                    <h3 class="text-xs font-black text-indigo-400 uppercase tracking-wider">Atendimento (17)</h3>
                 </div>
-                <div class="p-3 text-[10px] font-mono bg-slate-950/40 space-y-1 text-slate-300 max-h-[220px] overflow-y-auto">
-                    <div>• Jaison</div>
-                    <div>• Dayse</div>
-                    <div>• Nelson</div>
-                    <div>• Rafael (Sinop)</div>
-                    <div>• Claudia Rocha</div>
-                    <div>• Roberto Grecco</div>
-                    <div>• Lucas</div>
-                    <div>• Rozaria</div>
-                    <div>• Victoria</div>
-                    <div>• Adriana</div>
-                    <div>• Eduardo Figueira</div>
-                    <div>• Caroline Castro</div>
-                    <div class="text-slate-500">• Base Complementar (Mapeada 13)</div>
-                    <div class="text-slate-500">• Base Complementar (Mapeada 14)</div>
-                    <div class="text-slate-500">• Base Complementar (Mapeada 15)</div>
-                    <div class="text-slate-500">• Base Complementar (Mapeada 16)</div>
+                <div class="p-3 text-[10px] font-mono bg-slate-950/40 space-y-1 text-slate-300 max-h-[120px] overflow-y-auto">
+                    <div>• Thiago (Serrana-RJ)</div>
+                    <div>• Jaison (Respondido)</div>
+                    <div>• Dayse (Obra)</div>
+                    <div>• Nelson (Ultimato)</div>
+                    <div>• Rafael Sinop (Podcast)</div>
+                    <div>• Lucas (Filtro Preço)</div>
+                    <div>• Roberto Grecco (Segunda)</div>
+                    <div>• Victoria (Indicadores)</div>
+                    <div>• Adriana (Organização)</div>
+                    <div class="text-slate-500">• Demais Leads Mapeados (17)</div>
                 </div>
             </div>
+
+            <div class="bg-slate-900 rounded-xl border border-slate-800 shadow-xl overflow-hidden">
+                <div class="bg-slate-900 px-4 py-3 border-b border-slate-800">
+                    <h3 class="text-xs font-black text-blue-400 uppercase tracking-wider">Contato Inicial (14)</h3>
+                </div>
+                <div class="p-3 text-[10px] font-mono bg-slate-950/40 space-y-1 text-slate-400 max-h-[120px] overflow-y-auto">
+                    <div class="text-emerald-400 font-bold">• André [Novo Hoje]</div>
+                    <div class="text-emerald-400 font-bold">• Marcella [Novo Hoje]</div>
+                    <div class="text-emerald-400 font-bold">• Márcia [Novo Hoje]</div>
+                    <div class="text-white font-bold">• Andreia</div>
+                    <div>• Shimilly</div>
+                    <div>• Carlos</div>
+                    <div>• Marinho</div>
+                    <div>• Fabio</div>
+                    <div>• Michele</div>
+                    <div class="text-slate-500">• Demais Leads Giro (14)</div>
+                </div>
+            </div>
+
         </div>
 
     </div>
