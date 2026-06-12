@@ -24,7 +24,7 @@
             </div>
             <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-center min-w-[160px]">
                 <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-0.5">Sincronização Base</span>
-                <span class="text-xs text-emerald-400 font-mono font-bold">12/06/2026 - 09h45</span>
+                <span class="text-xs text-emerald-400 font-mono font-bold">12/06/2026 - 11h25</span>
             </div>
         </div>
     </div>
@@ -33,19 +33,19 @@
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md">
             <span class="text-[9px] uppercase font-bold tracking-wider text-slate-400 block mb-0.5">1. Total Leads</span>
             <div class="text-2xl font-black text-white">49</div>
-            <p class="text-[9px] text-slate-500">Base Bruta (+3 Hoje)</p>
+            <p class="text-[9px] text-slate-500">Base Bruta Captada</p>
         </div>
-        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-blue-500 bg-blue-950/5">
+        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-blue-500">
             <span class="text-[9px] uppercase font-bold tracking-wider text-blue-400 block mb-0.5">2. Contato Inicial</span>
-            <div class="text-2xl font-black text-blue-400">14</div>
-            <p class="text-[9px] text-slate-400">Giro de Cadência (28%)</p>
+            <div class="text-2xl font-black text-blue-400">13</div>
+            <p class="text-[9px] text-slate-400">Ajustado no Sistema (26%)</p>
         </div>
-        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-indigo-500">
+        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-indigo-500 bg-indigo-950/10">
             <span class="text-[9px] uppercase font-bold tracking-wider text-indigo-400 block mb-0.5">3. Atendimento</span>
-            <div class="text-2xl font-black text-white">17</div>
-            <p class="text-[9px] text-slate-500">Qualificação Ativa (34%)</p>
+            <div class="text-2xl font-black text-indigo-400">18</div>
+            <p class="text-[9px] text-slate-400">Avanço Volumétrico (36%)</p>
         </div>
-        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-amber-500 bg-amber-950/5">
+        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-amber-500">
             <span class="text-[9px] uppercase font-bold tracking-wider text-amber-400 block mb-0.5">4. Agendamento</span>
             <div class="text-2xl font-black text-amber-400">1</div>
             <p class="text-[9px] text-amber-500">Luciana (Hoje 16h00)</p>
@@ -54,7 +54,7 @@
             <div class="text-2xl font-black text-white">1</div>
             <p class="text-[9px] text-slate-500">Histórico Concluído</p>
         </div>
-        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-emerald-500 bg-emerald-950/10">
+        <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-emerald-500">
             <span class="text-[9px] uppercase font-bold tracking-wider text-emerald-400 block mb-0.5">6. Venda / Proposta</span>
             <div class="text-2xl font-black text-emerald-400">2</div>
             <p class="text-[9px] text-emerald-500">Jackson & Fernanda</p>
@@ -73,23 +73,23 @@
                     <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-blue-500 to-indigo-500 h-full" style="width: 100%"></div></div>
                 </div>
                 <div>
-                    <div class="flex justify-between text-xs mb-1 font-mono"><span>Contato Inicial ➔ Atendimento (Aproveitamento)</span><span class="text-emerald-400 font-bold">54.8%</span></div>
-                    <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden"><div class="bg-indigo-500 h-full" style="width: 54.8%"></div></div>
+                    <div class="flex justify-between text-xs mb-1 font-mono"><span>Contato Inicial ➔ Atendimento (Aproveitamento)</span><span class="text-emerald-400 font-bold">58.1%</span></div>
+                    <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden"><div class="bg-indigo-500 h-full" style="width: 58.1%"></div></div>
                 </div>
             </div>
         </div>
 
         <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-xl flex flex-col justify-between">
             <div>
-                <h3 class="text-xs font-black text-purple-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-calendar-check"></i> Ordem do Dia - 12/06
+                <h3 class="text-xs font-black text-indigo-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-house-laptop"></i> Auditoria de Processo Omissivo
                 </h3>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                    Três novos leads alocados em cadência inicial (<strong class="text-white">André, Marcella e Márcia</strong>). Foco operacional absoluto na reversão da entrada da Fernanda, fechamento do Jackson e blindagem da sala das 16h com o cônjuge da Luciana.
+                    Lead <strong class="text-white">André</strong> qualificado em ligação e movido para Atendimento. Alocado R$ 5k-10k/mês em marketing sem barreira de controle ou CRM. Gestão permissiva com histórico de dissolução societária. Alvo estratégico mapeado para segunda-feira.
                 </p>
             </div>
             <div class="text-[10px] text-slate-500 font-mono border-t border-slate-800 pt-3 mt-3">
-                Garantindo o fechamento da semana.
+                Mapeamento de faturamento ineficiente concluído.
             </div>
         </div>
 
@@ -132,9 +132,10 @@
             
             <div class="bg-slate-900 rounded-xl border border-slate-800 shadow-xl overflow-hidden">
                 <div class="bg-slate-900 px-4 py-3 border-b border-slate-800">
-                    <h3 class="text-xs font-black text-indigo-400 uppercase tracking-wider">Atendimento (17)</h3>
+                    <h3 class="text-xs font-black text-indigo-400 uppercase tracking-wider">Atendimento (18)</h3>
                 </div>
                 <div class="p-3 text-[10px] font-mono bg-slate-950/40 space-y-1 text-slate-300 max-h-[120px] overflow-y-auto">
+                    <div class="text-cyan-400 font-bold font-sans">🤝 André [5-10k Mkt / Sem CRM / Segunda 17h]</div>
                     <div class="text-cyan-400 font-bold font-sans">✈️ Thiago [3k Trafego / 90 Leads / Segunda]</div>
                     <div>• Jaison (Respondido)</div>
                     <div>• Dayse (Aguardando obra)</div>
@@ -144,25 +145,24 @@
                     <div>• Roberto Grecco (Segunda)</div>
                     <div>• Victoria (Indicadores)</div>
                     <div>• Adriana (Organização)</div>
-                    <div class="text-slate-500">• Demais Leads Mapeados (17)</div>
+                    <div class="text-slate-500">• Demais Leads Mapeados (18)</div>
                 </div>
             </div>
 
             <div class="bg-slate-900 rounded-xl border border-slate-800 shadow-xl overflow-hidden">
                 <div class="bg-slate-900 px-4 py-3 border-b border-slate-800">
-                    <h3 class="text-xs font-black text-blue-400 uppercase tracking-wider">Contato Inicial (14)</h3>
+                    <h3 class="text-xs font-black text-blue-400 uppercase tracking-wider">Contato Inicial (13)</h3>
                 </div>
                 <div class="p-3 text-[10px] font-mono bg-slate-950/40 space-y-1 text-slate-400 max-h-[120px] overflow-y-auto">
-                    <div class="text-emerald-400 font-bold">• André [Novo Hoje]</div>
-                    <div class="text-emerald-400 font-bold">• Marcella [Novo Hoje]</div>
-                    <div class="text-emerald-400 font-bold">• Márcia [Novo Hoje]</div>
+                    <div class="text-emerald-400 font-bold">• Marcella [Giro de Cadência]</div>
+                    <div class="text-emerald-400 font-bold">• Márcia [Giro de Cadência]</div>
                     <div class="text-white font-bold">• Andreia</div>
                     <div>• Shimilly</div>
                     <div>• Carlos</div>
                     <div>• Marinho</div>
                     <div>• Fabio</div>
                     <div>• Michele</div>
-                    <div class="text-slate-500">• Demais Leads Giro (14)</div>
+                    <div class="text-slate-500">• Demais Leads Giro (13)</div>
                 </div>
             </div>
 
