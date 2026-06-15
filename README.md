@@ -28,7 +28,7 @@
             </div>
             <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-center min-w-[160px]">
                 <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-0.5">Sincronização Base</span>
-                <span class="text-xs text-emerald-400 font-mono font-bold">15/06/2026 - 14h40</span>
+                <span class="text-xs text-emerald-400 font-mono font-bold">15/06/2026 - 14h50</span>
             </div>
         </div>
     </div>
@@ -37,27 +37,27 @@
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md">
             <span class="text-[9px] uppercase font-bold tracking-wider text-slate-400 block mb-0.5">Base Total Ativa</span>
             <div class="text-xl font-black text-white">22</div>
-            <p class="text-[9px] text-slate-500">Mesa Enxuta e Limpa</p>
+            <p class="text-[9px] text-slate-500">Oleoduto Enxuto e Limpo</p>
         </div>
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-blue-500">
             <span class="text-[9px] uppercase font-bold tracking-wider text-blue-400 block mb-0.5">PCI: Contato Inicial</span>
             <div class="text-xl font-black text-blue-400">5</div>
-            <p class="text-[9px] text-slate-400">Novos Alvos Identificados</p>
+            <p class="text-[9px] text-slate-400">Giro de Cadência Pendente</p>
         </div>
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-indigo-500">
             <span class="text-[9px] uppercase font-bold tracking-wider text-indigo-400 block mb-0.5">PCI: Atendimento</span>
             <div class="text-xl font-black text-indigo-400">9</div>
-            <p class="text-[9px] text-slate-400">4 Cadências Ativas Hoje</p>
+            <p class="text-[9px] text-slate-400">Qualificação e Reativações</p>
         </div>
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-cyan-500 bg-cyan-950/10">
             <span class="text-[9px] uppercase font-bold tracking-wider text-cyan-400 block mb-0.5">PCI: Agendado</span>
             <div class="text-xl font-black text-cyan-400">1</div>
-            <p class="text-[9px] text-cyan-400 font-bold">Shimilly + Sócio César</p>
+            <p class="text-[9px] text-cyan-300 font-bold">Shimilly + Sócio César</p>
         </div>
         <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 shadow-md border-t-2 border-t-amber-500">
             <span class="text-[9px] uppercase font-bold tracking-wider text-amber-400 block mb-0.5">LAP: Triagem</span>
             <div class="text-xl font-black text-amber-400">7</div>
-            <p class="text-[9px] text-slate-400">Foco em Cultura/Time</p>
+            <p class="text-[9px] text-slate-400">Foco em Cultura e Time</p>
         </div>
     </div>
 
@@ -67,27 +67,34 @@
             
             <div class="bg-slate-900 rounded-xl border border-slate-800 shadow-xl overflow-hidden">
                 <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex justify-between items-center bg-gradient-to-r from-slate-900 to-cyan-950/20">
-                    <h3 class="text-xs font-black text-cyan-400 uppercase tracking-wider"><i class="fa-solid fa-calendar-check mr-1"></i> Agenda de Auditoria Confirmada (Filtro SDR OK)</h3>
+                    <h3 class="text-xs font-black text-cyan-400 uppercase tracking-wider"><i class="fa-solid fa-calendar-check mr-1"></i> Auditoria de Engenharia de Processos Confirmada</h3>
                     <span class="bg-cyan-500/20 text-cyan-400 px-2 py-0.5 rounded text-[9px] font-bold font-mono">QUINTA 11h00</span>
                 </div>
                 <div class="p-4 text-xs">
                     <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
                         <div class="flex justify-between items-start mb-2">
-                            <span class="font-bold text-white text-sm">🏢 Shimilly & Sócio César (Imobiliária 10 anos)</span>
+                            <span class="font-bold text-white text-sm">🏢 Shimilly & Sócio César (Imobiliária de 10 Anos)</span>
                             <span class="bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded text-[10px] font-mono font-bold">🔥 VERBA: R$ 50K NO SEMESTRE</span>
                         </div>
-                        <p class="text-slate-400 leading-relaxed text-[11px]">
-                            Operação com 3 corretores no Microsistec. Investem R$ 7k/mês atualmente. Dor brutal em falta de rotina padrão para o time e receio de queimar os R$ 50k de investimento do semestre. O proprietário será o gerente inicial.
+                        <p class="text-slate-400 leading-relaxed text-[11px] mb-2">
+                            Operação com 3 corretores no Microsistec. Investem R$ 7k/mês e vão injetar R$ 50k. Dor brutal em falta de rotina padrão para o time e receio em queimar orçamento. O proprietário será o gerente inicial na implementação.
+                        </p>
+                        <p class="text-cyan-400 font-mono text-[11px]">
+                            <i class="fa-solid fa-lightbulb"></i> <strong>Estratégia de Fechamento:</strong> Sanar a dúvida de como o time será treinado e ancorar que o PCI é a blindagem para proteger o investimento de R$ 50k contra o ralo invisível do improviso.
                         </p>
                     </div>
                 </div>
             </div>
 
             <div class="bg-slate-900 rounded-xl border border-slate-800 shadow-xl overflow-hidden">
-                <div class="bg-slate-900 px-4 py-3 border-b border-slate-800">
+                <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex justify-between items-center bg-gradient-to-r from-slate-900 to-amber-950/10">
                     <h3 class="text-xs font-black text-amber-400 uppercase tracking-wider"><i class="fa-solid fa-users-gear mr-1"></i> Esteira LAP: Líder de Alta Performance (7 Alvos)</h3>
+                    <span class="bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded text-[9px] font-bold font-mono">CULTURA E TIME</span>
                 </div>
                 <div class="p-4">
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                        Dono focado em cultura, comportamento e atitude comercial. Aplicar scripts de Headhunter / Auditor de Performance para extrair a insatisfação com a autonomia da equipa atual.
+                    </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-[11px] font-mono">
                         <div class="bg-slate-950 p-2 rounded border border-slate-800"><span class="text-amber-400 font-bold">📋 Alan Bruno</span> <span class="text-slate-500 text-[10px]">(Planilha Pedro)</span></div>
                         <div class="bg-slate-950 p-2 rounded border border-slate-800"><span class="text-amber-400 font-bold">📋 Isabel</span> <span class="text-slate-500 text-[10px]">(Planilha Pedro)</span></div>
@@ -109,14 +116,14 @@
                     <h3 class="text-xs font-black text-indigo-400 uppercase tracking-wider">PCI: Atendimento (9)</h3>
                 </div>
                 <div class="p-3 text-[10px] font-mono bg-slate-950/40 space-y-1.5 text-slate-300">
-                    <div class="text-emerald-400 font-bold">🔥 André (Mesa das 17h00)</div>
-                    <div class="text-emerald-400 font-bold">🔥 Thiago Freitas (Cadência Rodada)</div>
-                    <div class="text-emerald-400 font-bold">🔥 Luiz (Cadência Rodada)</div>
-                    <div class="text-emerald-400 font-bold">🤝 Jackson Baiano (Acompanhamento)</div>
-                    <div class="text-amber-400 font-bold">• Eduardo Figueira (Analisando)</div>
+                    <div class="text-emerald-400 font-bold flex justify-between"><span>🔥 André</span> <span class="text-[9px] bg-emerald-500/10 px-1 rounded">HOJE 17h00</span></div>
+                    <div class="text-emerald-400 font-bold">• Thiago Freitas (Cadência Ativa)</div>
+                    <div class="text-emerald-400 font-bold">• Luiz (Aguardando Retorno)</div>
+                    <div class="text-emerald-400 font-bold">• Jackson Baiano (Acompanhamento)</div>
                     <div class="text-cyan-400 font-bold">• Fagner (Alfa Cacoal - Reativando)</div>
+                    <div class="text-amber-400 font-bold">• Eduardo Figueira (Analisando)</div>
                     <div>• Lucas (Caso Familiar / Mãe)</div>
-                    <div>• Fernanda (Proposta Contratual)</div>
+                    <div>• Fernanda (Proposta Comercial)</div>
                     <div>• Caroline Castro</div>
                 </div>
             </div>
@@ -126,11 +133,11 @@
                     <h3 class="text-xs font-black text-blue-400 uppercase tracking-wider">PCI: Contato Inicial (5)</h3>
                 </div>
                 <div class="p-3 text-[10px] font-mono bg-slate-950/40 space-y-1.5">
-                    <div class="text-amber-400 font-bold">⚠️ Carlos Hotz (Ainda não liguei)</div>
-                    <div class="text-amber-400 font-bold">⚠️ Franciane (Ainda não liguei)</div>
+                    <div class="text-amber-400 font-bold">⚠️ Carlos Hotz (Não ligou)</div>
+                    <div class="text-amber-400 font-bold">⚠️ Franciane (Não ligou)</div>
                     <div class="text-slate-300">• Alexandra</div>
                     <div class="text-slate-300">• Helliomar</div>
-                    <div class="text-cyan-400">• João Ricardo Geron (Migrado LAP)</div>
+                    <div class="text-slate-400">• João Ricardo Geron</div>
                 </div>
             </div>
 
@@ -139,5 +146,4 @@
     </div>
 
 </body>
-</html>
 </html>
