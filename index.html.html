@@ -2,53 +2,60 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Atendimento - Cleber</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-950 text-slate-200 p-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-            <h3 class="text-slate-500 text-xs uppercase font-bold">Taxa de Conversão</h3>
-            <p class="text-3xl font-black text-emerald-400">14.2%</p>
+<body class="min-h-screen bg-gray-950 text-white p-6 font-sans">
+
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b border-gray-800 pb-6">
+        <div>
+            <h1 class="text-3xl font-bold tracking-tight bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
+                SISTEMA DE CADÊNCIA OPERACIONAL
+            </h1>
+            <p class="text-gray-400 mt-1 text-sm">Performance de Atendimento — Consultor Cleber Michel</p>
         </div>
-        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-            <h3 class="text-slate-500 text-xs uppercase font-bold">Pipeline Valor (Estimado)</h3>
-            <p class="text-3xl font-black text-blue-400">R$ 179.800</p>
-        </div>
-        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-            <h3 class="text-slate-500 text-xs uppercase font-bold">Leads Ativos</h3>
-            <p class="text-3xl font-black text-white">45</p>
-        </div>
-        <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-            <h3 class="text-slate-500 text-xs uppercase font-bold">Velocidade (Lead/Dia)</h3>
-            <p class="text-3xl font-black text-amber-400">4.2h</p>
+        <div class="bg-gray-900 border border-gray-800 px-4 py-2 rounded-lg mt-4 md:mt-0">
+            <span class="text-xs text-gray-500 block uppercase">Atualizado em</span>
+            <span class="text-sm font-semibold text-orange-400">22 de Junho, 2026</span>
         </div>
     </div>
 
-    <div class="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden">
-        <table class="w-full text-left">
-            <thead class="bg-slate-800 text-slate-400 text-xs uppercase">
-                <tr>
-                    <th class="p-4">Lead</th>
-                    <th class="p-4">Etapa</th>
-                    <th class="p-4">Prob. de Fechamento</th>
-                    <th class="p-4">Última Atividade</th>
-                </tr>
-            </thead>
-            <tbody class="text-sm">
-                <tr class="border-b border-slate-800">
-                    <td class="p-4 font-semibold">Lorena (Imobiliária)</td>
-                    <td class="p-4 text-emerald-400">Fechamento</td>
-                    <td class="p-4">95%</td>
-                    <td class="p-4">Hoje</td>
-                </tr>
-                <tr class="border-b border-slate-800">
-                    <td class="p-4 font-semibold">Rodrigo (CEO)</td>
-                    <td class="p-4 text-blue-400">Atendimento</td>
-                    <td class="p-4">70%</td>
-                    <td class="p-4">Hoje</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl">
+            <p class="text-xs text-gray-400 uppercase font-medium">Total em Carteira Ativa</p>
+            <p class="text-3xl font-bold mt-2 text-white">52 <span class="text-sm font-normal text-gray-500">leads</span></p>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl border-l-4 border-l-emerald-500">
+            <p class="text-xs text-emerald-400 uppercase font-medium">Líder: Em Atendimento</p>
+            <p class="text-3xl font-bold mt-2 text-emerald-400">28 <span class="text-sm font-normal text-gray-500">no funil</span></p>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl border-l-4 border-l-amber-500">
+            <p class="text-xs text-amber-400 uppercase font-medium">PCI: Em Atendimento</p>
+            <p class="text-3xl font-bold mt-2 text-amber-400">10 <span class="text-sm font-normal text-gray-500">no funil</span></p>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl border-l-4 border-l-blue-500">
+            <p class="text-xs text-blue-400 uppercase font-medium">Contatos Iniciais (Total)</p>
+            <p class="text-3xl font-bold mt-2 text-blue-400">14 <span class="text-sm font-normal text-gray-500">novos (12L / 2P)</span></p>
+        </div>
+    </div>
+
+    <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl mb-8">
+        <h3 class="text-lg font-bold mb-4 text-gray-200">Foco Estratégico de Hoje</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-800">
+                <span class="text-emerald-400 font-bold block mb-1">1. Fechamentos</span>
+                Cobrar Luiz Machado (Piso R$ 2.800) e resgatar feedback da Luciana (PCI).
+            </div>
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-800">
+                <span class="text-amber-400 font-bold block mb-1">2. Fluxo Ativo (38)</span>
+                Nutrir e reengajar os 28 leads de Líder e 10 de PCI que estão em atendimento.
+            </div>
+            <div class="p-4 bg-gray-950 rounded-lg border border-gray-800">
+                <span class="text-blue-400 font-bold block mb-1">3. Cadência Inicial (14)</span>
+                Disparar primeiro tiro de qualificação nos 12 novos de Líder e 2 de PCI.
+            </div>
+        </div>
     </div>
 </body>
 </html>
