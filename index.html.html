@@ -21,16 +21,16 @@
         </div>
         <div class="bg-gray-900 border border-gray-800 px-4 py-2 rounded-lg shadow-lg">
             <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">Última Atualização</span>
-            <span class="text-sm font-mono text-orange-400">30 de Junho de 2026</span>
+            <span class="text-sm font-mono text-orange-400">01 de Julho de 2026</span>
         </div>
     </div>
 
-    <div class="bg-emerald-950/40 border-2 border-emerald-500 p-5 rounded-xl mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-xl">
+    <div class="bg-red-950/40 border-2 border-red-500 p-5 rounded-xl mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-xl">
         <div class="flex items-center gap-4">
             <span class="text-4xl animate-pulse">🎯</span>
             <div>
-                <strong class="text-emerald-400 text-lg block font-black uppercase tracking-wide">Próximo Alvo: Gustavo Nalin (PCI)</strong>
-                <p class="text-sm text-gray-200 mt-0.5">Ligação agendada para as <span class="text-white font-bold bg-emerald-600 px-1.5 py-0.5 rounded">13:40 PM</span>. Prepare o script de diagnóstico de imobiliária.</p>
+                <strong class="text-red-400 text-lg block font-black uppercase tracking-wide">Foco do Dia: Reunião com Carolina (Real Estate)</strong>
+                <p class="text-sm text-gray-200 mt-0.5">Agendado para as <span class="text-white font-bold bg-red-600 px-1.5 py-0.5 rounded">14:00 PM</span>. Dor: Vendas abaixo do estimado. Operação de 50M/ano de VGV.</p>
             </div>
         </div>
     </div>
@@ -39,21 +39,21 @@
         <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow-md flex justify-between items-center relative overflow-hidden group">
             <div>
                 <span class="text-xs font-bold text-gray-400 tracking-wider block mb-1 uppercase">Total Leads Ativos</span>
-                <span class="text-4xl font-black text-white font-mono">59</span>
+                <span class="text-4xl font-black text-white font-mono">28</span>
             </div>
             <div class="text-3xl opacity-20">🦅</div>
         </div>
         <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow-md flex justify-between items-center relative overflow-hidden group">
             <div>
                 <span class="text-xs font-bold text-gray-400 tracking-wider block mb-1 uppercase">Contato Inicial</span>
-                <span class="text-4xl font-black text-blue-400 font-mono">6</span>
+                <span class="text-4xl font-black text-blue-400 font-mono">7</span>
             </div>
             <div class="text-3xl opacity-20">📞</div>
         </div>
         <div class="bg-gray-900 border border-red-900/50 p-6 rounded-xl shadow-md bg-gradient-to-br from-gray-900 to-red-950/20 flex justify-between items-center relative overflow-hidden group">
             <div>
                 <span class="text-xs font-bold text-red-400 tracking-wider block mb-1 uppercase">Fase de Atendimento</span>
-                <span class="text-4xl font-black text-red-500 font-mono">53</span>
+                <span class="text-4xl font-black text-red-500 font-mono">21</span>
             </div>
             <div class="text-3xl opacity-40">🔥</div>
         </div>
@@ -84,67 +84,6 @@
                 </thead>
                 <tbody class="divide-y divide-gray-800/50 text-sm">
                     <tr>
-                        <td class="py-3.5 font-bold text-orange-400">lider <span class="text-xs font-normal text-gray-500">(Presencial SP)</span></td>
-                        <td class="py-3.5 text-center font-mono">2</td>
-                        <td class="py-3.5 text-center font-mono text-red-400 font-bold">34</td>
-                        <td class="py-3.5 text-right font-mono font-bold text-white">36</td>
-                    </tr>
-                    <tr>
                         <td class="py-3.5 font-bold text-emerald-400">PCI <span class="text-xs font-normal text-gray-500">(High Ticket)</span></td>
                         <td class="py-3.5 text-center font-mono">2</td>
-                        <td class="py-3.5 text-center font-mono text-red-400 font-bold">12</td>
-                        <td class="py-3.5 text-right font-mono font-bold text-white">14</td>
-                    </tr>
-                    <tr>
-                        <td class="py-3.5 font-bold text-yellow-500">santos <span class="text-xs font-normal text-gray-500">(Lote Zero)</span></td>
-                        <td class="py-3.5 text-center font-mono">2</td>
-                        <td class="py-3.5 text-center font-mono">7</td>
-                        <td class="py-3.5 text-right font-mono font-bold text-white">9</td>
-                    </tr>
-                    <tr>
-                        <td class="py-3.5 font-bold text-purple-400">corretor <span class="text-xs font-normal text-gray-500">(VIP Toca)</span></td>
-                        <td class="py-3.5 text-center font-mono text-gray-600">0</td>
-                        <td class="py-3.5 text-center font-mono text-gray-600">0</td>
-                        <td class="py-3.5 text-right font-mono text-gray-600">0</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <script>
-        const ctx = document.getElementById('funnelChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Líder (367)', 'PCI (30k)', 'Santos (52)', 'Corretor (314)'],
-                datasets: [
-                    {
-                        label: 'Contato Inicial',
-                        data: [2, 2, 2, 0],
-                        backgroundColor: '#3B82F6',
-                        borderRadius: 4
-                    },
-                    {
-                        label: 'Atendimento',
-                        data: [34, 12, 7, 0],
-                        backgroundColor: '#EF4444',
-                        borderRadius: 4
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { labels: { color: '#9CA3AF', font: { weight: 'bold' } } }
-                },
-                scales: {
-                    x: { stacked: true, grid: { display: false }, ticks: { color: '#9CA3AF' } },
-                    y: { stacked: true, grid: { color: '#1F2937' }, ticks: { color: '#9CA3AF' } }
-                }
-            }
-        });
-    </script>
-</body>
-</html>
+                        <td class="
