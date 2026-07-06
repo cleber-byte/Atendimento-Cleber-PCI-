@@ -3,172 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard de Atendimento - Cleber</title>
+    <title>Dashboard Comercial - Cleber Solar</title>
+    <!-- Tailwind CSS para Design Premium -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js para Gráficos Dinâmicos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="min-h-screen bg-gray-950 text-white p-6 font-sans">
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans p-6">
 
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b border-gray-800 pb-6">
+    <!-- Header -->
+    <header class="max-w-7xl mx-auto mb-8 flex justify-between items-center border-b border-slate-800 pb-4">
         <div>
-            <h1 class="text-3xl font-bold tracking-tight bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
-                SISTEMA DE CADÊNCIA OPERACIONAL
+            <h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                🦅 Dashboard de Performance <span class="text-xs bg-amber-500/10 text-amber-400 px-2.5 py-0.5 rounded-full border border-amber-500/20 font-medium">Time GM</span>
             </h1>
-            <p class="text-gray-400 mt-1 text-sm">Performance de Atendimento — Consultor Cleber Michel</p>
+            <p class="text-slate-400 text-sm mt-1">Controle de Pipeline, PCI e Imersão Líder</p>
         </div>
-        <div class="bg-gray-900 border border-gray-800 px-4 py-2 rounded-lg mt-4 md:mt-0">
-            <span class="text-xs text-gray-500 block uppercase">Atualizado em</span>
-            <span class="text-sm font-semibold text-orange-400">18 de Junho, 2026</span>
+        <div class="text-right">
+            <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Atualizado em</p>
+            <p class="text-sm font-medium text-slate-300">Hoje, 18:25</p>
         </div>
-    </div>
+    </header>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl">
-            <p class="text-xs text-gray-400 uppercase font-medium">Total em Carteira</p>
-            <p class="text-3xl font-bold mt-2 text-white">49 <span class="text-sm font-normal text-gray-500">leads</span></p>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl border-l-4 border-l-emerald-500">
-            <p class="text-xs text-emerald-400 uppercase font-medium">Ganhos Pagos</p>
-            <p class="text-3xl font-bold mt-2 text-emerald-400">4 <span class="text-sm font-normal text-gray-500">fechados</span></p>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl border-l-4 border-l-amber-500">
-            <p class="text-xs text-amber-400 uppercase font-medium">Em Atendimento Ativo</p>
-            <p class="text-3xl font-bold mt-2 text-amber-400">28 <span class="text-sm font-normal text-gray-500">no funil</span></p>
-        </div>
-        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl border-l-4 border-l-blue-500">
-            <p class="text-xs text-blue-400 uppercase font-medium">Contato Inicial (Triagem)</p>
-            <p class="text-3xl font-bold mt-2 text-blue-400">21 <span class="text-sm font-normal text-gray-500">novos</span></p>
-        </div>
-    </div>
-
-    <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl mb-8">
-        <h3 class="text-lg font-bold mb-4 text-gray-200">Distribuição Operacional por Origem do Lead</h3>
-        <div class="space-y-4">
-            <div>
-                <div class="flex justify-between text-xs mb-1">
-                    <span class="text-gray-300 font-medium">Planilha Pedro / Comercial</span>
-                    <span class="text-orange-400 font-bold">3 Atendimentos (Ganhos)</span>
-                </div>
-                <div class="w-full bg-gray-800 h-3 rounded-full overflow-hidden">
-                    <div class="bg-gradient-to-r from-orange-500 to-amber-400 h-full w-[45%]"></div>
-                </div>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto space-y-8">
+        
+        <!-- Top Cards (Indicadores) -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
+                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Reuniões Realizadas Hoje</p>
+                <p class="text-2xl font-bold text-emerald-400 mt-2">2 Reuniões</p>
             </div>
-            <div>
-                <div class="flex justify-between text-xs mb-1">
-                    <span class="text-gray-300 font-medium">Campanha JOKER</span>
-                    <span class="text-orange-400 font-bold">1 Atendimento (PCI Ganho)</span>
-                </div>
-                <div class="w-full bg-gray-800 h-3 rounded-full overflow-hidden">
-                    <div class="bg-gradient-to-r from-orange-500 to-amber-400 h-full w-[20%]"></div>
-                </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
+                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Leads em Atendimento (PCI)</p>
+                <p class="text-2xl font-bold text-amber-400 mt-2">9 Leads</p>
             </div>
-            <div>
-                <div class="flex justify-between text-xs mb-1">
-                    <span class="text-gray-300 font-medium">Inbound Site / Landing Page / Redes</span>
-                    <span class="text-orange-400 font-bold">45 Atendimentos</span>
-                </div>
-                <div class="w-full bg-gray-800 h-3 rounded-full overflow-hidden">
-                    <div class="bg-gradient-to-r from-orange-500 to-amber-400 h-full w-[85%]"></div>
-                </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
+                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Meets Agendados</p>
+                <p class="text-2xl font-bold text-blue-400 mt-2">2 Agendados</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
+                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Links do Líder Enviados</p>
+                <p class="text-2xl font-bold text-purple-400 mt-2">2 Pendentes</p>
             </div>
         </div>
-    </div>
 
-    <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
-        <div class="p-6 border-b border-gray-800">
-            <h3 class="text-lg font-bold text-gray-200">Painel de Controle de Leads e Cadência</h3>
+        <!-- Seção de Ações Críticas -->
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
+            <h3 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider text-rose-400 flex items-center gap-2">
+                🎯 Próximos Alvos & Respostas Críticas
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Leonardo -->
+                <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-bold text-white">Leonardo Dias Novaes (PCI)</span>
+                            <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20">Amanhã - 13:00</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2">
+                            <strong class="text-slate-300">Gatilho de Abordagem:</strong> Alinhamento com a esposa. Focar no gancho de tirar o Leonardo do operacional para dar liberdade de tempo à família.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gustavo -->
+                <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-bold text-white">Gustavo (PCI / Paulo)</span>
+                            <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded border border-blue-500/20">Quarta - 15:50</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2">
+                            <strong class="text-slate-300">Gatilho de Abordagem:</strong> Resposta do alinhamento interno com o Paulo (Dono). Usar a autoridade do gerente de confiança que validou a engenharia do processo.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="bg-gray-950 text-gray-400 text-xs uppercase font-semibold border-b border-gray-800">
-                        <th class="p-4">Nome do Lead</th>
-                        <th class="p-4">Produto</th>
-                        <th class="p-4">Origem do Lead</th>
-                        <th class="p-4">Status</th>
-                        <th class="p-4 text-center">Dias Sem Contato</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-800 text-sm text-gray-300">
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Guilherme Zaggia</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-purple-950 text-purple-300 border border-purple-800">PCI</span></td>
-                        <td class="p-4 font-medium">Campanha JOKER</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800">Ganho</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">0d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Rodrigo</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">Líder</span></td>
-                        <td class="p-4 font-medium">Planilha Pedro</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800">Ganho</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">0d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Bethania</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">Líder</span></td>
-                        <td class="p-4 font-medium">Planilha Pedro</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800">Ganho</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">0d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Shimilly</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-purple-950 text-purple-300 border border-purple-800">PCI</span></td>
-                        <td class="p-4 font-medium">Planilha Pedro</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800">Ganho</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">0d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Ricardo</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-purple-950 text-purple-300 border border-purple-800">PCI</span></td>
-                        <td class="p-4 font-medium">Site (Londrina)</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-950 text-amber-400 border border-amber-800">Atendimento</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">0d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Luiz</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">Líder</span></td>
-                        <td class="p-4 font-medium">Base Ativa</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-950 text-amber-400 border border-amber-800">Atendimento</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">1d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Gilmara</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">Líder</span></td>
-                        <td class="p-4 font-medium">Formulário Interesse</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-950 text-amber-400 border border-amber-800">Atendimento</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">1d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Milena</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">Líder</span></td>
-                        <td class="p-4 font-medium">Formulário Interesse</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-950 text-amber-400 border border-amber-800">Atendimento</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">2d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Jan Guimaraes</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-purple-950 text-purple-300 border border-purple-800">PCI</span></td>
-                        <td class="p-4 font-medium">Mapear</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-950 text-blue-400 border border-blue-800">Contato Inicial</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">0d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Fabiano</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">Líder</span></td>
-                        <td class="p-4 font-medium">Mapear</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-950 text-blue-400 border border-blue-800">Contato Inicial</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">0d</td>
-                    </tr>
-                    <tr class="hover:bg-gray-900/50 transition-colors">
-                        <td class="p-4 font-semibold text-white">Laira Stephane</td>
-                        <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold bg-cyan-950 text-cyan-300 border border-cyan-800">Líder</span></td>
-                        <td class="p-4 font-medium">Landing Page</td>
-                        <td class="p-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-950 text-blue-400 border border-blue-800">Contato Inicial</span></td>
-                        <td class="p-4 text-center font-bold text-gray-400">1d</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <!-- Charts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Gráfico Funil PCI -->
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
+                <h3 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider">Pipeline de Vendas: PCI</h3>
+                <div class="relative h-64">
+                    <canvas id="chartPCI"></canvas>
+                </div>
+            </div>
+
+            <!-- Gráfico Funil Líder -->
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
+                <h3 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider">Pipeline de Vendas: Imersão Líder</h3>
+                <div class="relative h-64">
+                    <canvas id="chartLider"></canvas>
+                </div>
+            </div>
         </div>
-    </div>
+
+    </main>
+
+    <!-- Script dos Gráficos Dinâmicos -->
+    <script>
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { display: false }, ticks: { color: '#94a3b8' } },
+                y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', stepSize: 2 } }
+            }
+        };
+
+        // Gráfico PCI
+        new Chart(document.getElementById('chartPCI'), {
+            type: 'bar',
+            data: {
+                labels: ['Contato Inicial', 'Em Atendimento', 'Agendado (Meet)', 'Reuniões Realizadas'],
+                datasets: [{
+                    data: [8, 9, 2, 2],
+                    backgroundColor: ['#475569', '#f59e0b', '#3b82f6', '#10b981'],
+                    borderRadius: 6
+                }]
+            },
+            options: chartOptions
+        });
+
+        // Gráfico Líder
+        new Chart(document.getElementById('chartLider'), {
+            type: 'bar',
+            data: {
+                labels: ['Contato Inicial', 'Em Atendimento', 'Links Enviados'],
+                datasets: [{
+                    data: [1, 4, 2],
+                    backgroundColor: ['#64748b', '#a855f7', '#ec4899'],
+                    borderRadius: 6
+                }]
+            },
+            options: chartOptions
+        });
+    </script>
 </body>
 </html>
