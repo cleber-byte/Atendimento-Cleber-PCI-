@@ -1,147 +1,175 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Comercial - Cleber Solar</title>
-    <!-- Tailwind CSS para Design Premium -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js para Gráficos Dinâmicos -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans p-6">
+import React from 'react';
+import { BarChart3, PhoneCall, Calendar, Users, AlertCircle, CheckCircle2, Clock, Snowman } from 'lucide-react';
 
-    <!-- Header -->
-    <header class="max-w-7xl mx-auto mb-8 flex justify-between items-center border-b border-slate-800 pb-4">
+export default function CloserDashboard() {
+  const metricas = {
+    contatoInicial: 7,
+    atendimento: 4,
+    agendamento: 2,
+    reunioesRealizadas: 4
+  };
+
+  const leadsQuentes = [
+    {
+      id: 1,
+      nome: "Rodrigo Bueno",
+      etapa: "Fechamento Urgente",
+      prioridade: "MÁXIMA",
+      detalhes: "Contrato gerado (10k entrada + 20k boleto). Aguardando assinatura e Pix hoje.",
+      corPrioridade: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+      icon: <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+    },
+    {
+      id: 2,
+      nome: "Tatiana - Tamar Imóveis",
+      etapa: "Aguardando Resposta",
+      prioridade: "MÁXIMA",
+      detalhes: "Deu o 'sim'. Fechou ontem de apresentar ao marido. Cobrar veredito hoje.",
+      corPrioridade: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+      icon: <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+    },
+    {
+      id: 3,
+      nome: "Gustavo",
+      etapa: "Negociação Entrada",
+      prioridade: "ALTA",
+      detalhes: "Sócio Paulo travou a entrada do boleto. Aplicar script de parcelamento da entrada.",
+      corPrioridade: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+      icon: <AlertCircle className="w-5 h-5 text-amber-400" />
+    },
+    {
+      id: 4,
+      nome: "Luciana (Sorocaba)",
+      etapa: "Reunião Agendada",
+      prioridade: "MÉDIA",
+      detalhes: "Alinhamento estratégico com o sócio/marido Marco. Segunda (13/07) às 16:00h.",
+      corPrioridade: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
+      icon: <Calendar className="w-5 h-5 text-indigo-400" />
+    },
+    {
+      id: 5,
+      nome: "Alex",
+      etapa: "Reunião Agendada",
+      prioridade: "MÉDIA",
+      detalhes: "Confirmado com a esposa na mesa. Terça-feira (14/07) às 10:00h. Pré-call dia 13.",
+      corPrioridade: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
+      icon: <Calendar className="w-5 h-5 text-indigo-400" />
+    },
+    {
+      id: 6,
+      nome: "Leonardo",
+      etapa: "No Gelo (Vácuo)",
+      prioridade: "BAIXA",
+      detalhes: "Ofertado Pocket (12k). Sumiu e pediu 15 dias de prazo. Não demonstrar desespero.",
+      corPrioridade: "bg-slate-500/10 text-slate-400 border-slate-500/20",
+      icon: <Clock className="w-5 h-5 text-slate-400" />
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 font-sans">
+      {/* HEADER */}
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-slate-800 pb-6 mb-8">
         <div>
-            <h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                🦅 Dashboard de Performance <span class="text-xs bg-amber-500/10 text-amber-400 px-2.5 py-0.5 rounded-full border border-amber-500/20 font-medium">Time GM</span>
-            </h1>
-            <p class="text-slate-400 text-sm mt-1">Controle de Pipeline, PCI e Imersão Líder</p>
+          <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+            <BarChart3 className="text-indigo-500 w-7 h-7" /> Control Room — Cleber Solar
+          </h1>
+          <p className="text-sm text-slate-400 mt-1">Gestão de Performance Comercial & Pipeline PCI</p>
         </div>
-        <div class="text-right">
-            <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Atualizado em</p>
-            <p class="text-sm font-medium text-slate-300">Hoje, 18:25</p>
+        <div className="mt-4 md:mt-0 bg-slate-900 border border-slate-800 px-4 py-2 rounded-lg text-xs font-mono text-indigo-400">
+          Data do Sistema: 09/07/2026
         </div>
-    </header>
+      </div>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto space-y-8">
-        
-        <!-- Top Cards (Indicadores) -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
-                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Reuniões Realizadas Hoje</p>
-                <p class="text-2xl font-bold text-emerald-400 mt-2">2 Reuniões</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
-                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Leads em Atendimento (PCI)</p>
-                <p class="text-2xl font-bold text-amber-400 mt-2">9 Leads</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
-                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Meets Agendados</p>
-                <p class="text-2xl font-bold text-blue-400 mt-2">2 Agendados</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
-                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Links do Líder Enviados</p>
-                <p class="text-2xl font-bold text-purple-400 mt-2">2 Pendentes</p>
-            </div>
+      {/* RIGA DE KPIS (ESTILO POWER BI) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-lg shadow-black/20">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Contato Inicial</p>
+            <h3 className="text-3xl font-bold mt-1 text-white">{metricas.contatoInicial}</h3>
+          </div>
+          <div className="p-3 bg-slate-800 rounded-lg text-slate-400"><PhoneCall className="w-6 h-6" /></div>
         </div>
 
-        <!-- Seção de Ações Críticas -->
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-            <h3 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider text-rose-400 flex items-center gap-2">
-                🎯 Próximos Alvos & Respostas Críticas
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Leonardo -->
-                <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm font-bold text-white">Leonardo Dias Novaes (PCI)</span>
-                            <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20">Amanhã - 13:00</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-2">
-                            <strong class="text-slate-300">Gatilho de Abordagem:</strong> Alinhamento com a esposa. Focar no gancho de tirar o Leonardo do operacional para dar liberdade de tempo à família.
-                        </p>
-                    </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-lg shadow-black/20">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Atendimentos Ativos</p>
+            <h3 className="text-3xl font-bold mt-1 text-white">{metricas.atendimento}</h3>
+          </div>
+          <div className="p-3 bg-slate-800 rounded-lg text-indigo-400"><Users className="w-6 h-6" /></div>
+        </div>
+
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-lg shadow-black/20">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Agendamentos</p>
+            <h3 className="text-3xl font-bold mt-1 text-white">{metricas.agendamento}</h3>
+          </div>
+          <div className="p-3 bg-slate-800 rounded-lg text-sky-400"><Calendar className="w-6 h-6" /></div>
+        </div>
+
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-lg shadow-black/20">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Reuniões Feitas</p>
+            <h3 className="text-3xl font-bold mt-1 text-emerald-400">{metricas.reunioesRealizadas}</h3>
+          </div>
+          <div className="p-3 bg-slate-800 rounded-lg text-emerald-400"><BarChart3 className="w-6 h-6" /></div>
+        </div>
+      </div>
+
+      {/* PIPELINE DE ATENDIMENTOS QUENTES */}
+      <div className="bg-slate-900 border border-slate-800 rounded-xl shadow-xl overflow-hidden">
+        <div className="px-6 py-4 border-b border-slate-800 bg-slate-900/50 flex justify-between items-center">
+          <h2 className="text-lg font-bold text-white tracking-tight">Esteira Crítica de Negociação</h2>
+          <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Foco Total em Recebimento</span>
+        </div>
+        <div className="divide-y divide-slate-800">
+          {leadsQuentes.map((lead) => (
+            <div key={lead.id} className="p-6 hover:bg-slate-850 transition duration-150 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              <div className="flex items-start gap-4">
+                <div className="mt-1 p-2 bg-slate-800 rounded-lg shrink-0">
+                  {lead.icon}
                 </div>
-
-                <!-- Gustavo -->
-                <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm font-bold text-white">Gustavo (PCI / Paulo)</span>
-                            <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded border border-blue-500/20">Quarta - 15:50</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-2">
-                            <strong class="text-slate-300">Gatilho de Abordagem:</strong> Resposta do alinhamento interno com o Paulo (Dono). Usar a autoridade do gerente de confiança que validou a engenharia do processo.
-                        </p>
-                    </div>
+                <div>
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h4 className="text-base font-bold text-white">{lead.nome}</h4>
+                    <span className="text-xs px-2.5 py-0.5 rounded-md font-mono bg-slate-800 text-slate-300 border border-slate-700">
+                      {lead.etapa}
+                    </span>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${lead.corPrioridade}`}>
+                      {lead.prioridade}
+                    </span>
+                  </div>
+                  <p className="text-sm text-slate-400 mt-2 max-w-3xl leading-relaxed">
+                    {lead.detalhes}
+                  </p>
                 </div>
+              </div>
+              <div className="lg:text-right shrink-0">
+                {lead.prioridade === "MÁXIMA" && (
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 animate-pulse">
+                    🚀 Fechar Hoje
+                  </span>
+                )}
+                {lead.prioridade === "ALTA" && (
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950">
+                    ⚡ Quebrar Objeção
+                  </span>
+                )}
+                {lead.prioridade === "MÉDIA" && (
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700">
+                    🗓️ Cadenciado
+                  </span>
+                )}
+                {lead.prioridade === "BAIXA" && (
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-950 text-slate-500 border border-slate-900">
+                    🧊 Aguardar
+                  </span>
+                )}
+              </div>
             </div>
+          ))}
         </div>
-
-        <!-- Charts Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Gráfico Funil PCI -->
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-                <h3 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider">Pipeline de Vendas: PCI</h3>
-                <div class="relative h-64">
-                    <canvas id="chartPCI"></canvas>
-                </div>
-            </div>
-
-            <!-- Gráfico Funil Líder -->
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-                <h3 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider">Pipeline de Vendas: Imersão Líder</h3>
-                <div class="relative h-64">
-                    <canvas id="chartLider"></canvas>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Script dos Gráficos Dinâmicos -->
-    <script>
-        const chartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                x: { grid: { display: false }, ticks: { color: '#94a3b8' } },
-                y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', stepSize: 2 } }
-            }
-        };
-
-        // Gráfico PCI
-        new Chart(document.getElementById('chartPCI'), {
-            type: 'bar',
-            data: {
-                labels: ['Contato Inicial', 'Em Atendimento', 'Agendado (Meet)', 'Reuniões Realizadas'],
-                datasets: [{
-                    data: [8, 9, 2, 2],
-                    backgroundColor: ['#475569', '#f59e0b', '#3b82f6', '#10b981'],
-                    borderRadius: 6
-                }]
-            },
-            options: chartOptions
-        });
-
-        // Gráfico Líder
-        new Chart(document.getElementById('chartLider'), {
-            type: 'bar',
-            data: {
-                labels: ['Contato Inicial', 'Em Atendimento', 'Links Enviados'],
-                datasets: [{
-                    data: [1, 4, 2],
-                    backgroundColor: ['#64748b', '#a855f7', '#ec4899'],
-                    borderRadius: 6
-                }]
-            },
-            options: chartOptions
-        });
-    </script>
-</body>
-</html>
+      </div>
+    </div>
+  );
+}
