@@ -1,175 +1,215 @@
-import React from 'react';
-import { BarChart3, PhoneCall, Calendar, Users, AlertCircle, CheckCircle2, Clock, Snowman } from 'lucide-react';
+import React, { useState } from 'react';
+import { 
+  Filter, Download, RefreshCw, Maximize2, MoreHorizontal, 
+  ChevronDown, Calendar, BarChart2, DollarSign, Users, 
+  AlertTriangle, CheckCircle, Clock, Search, Sliders
+} from 'lucide-react';
 
-export default function CloserDashboard() {
-  const metricas = {
-    contatoInicial: 7,
-    atendimento: 4,
-    agendamento: 2,
-    reunioesRealizadas: 4
-  };
+export default function PowerBiDashboard() {
+  const [abaAtiva, setAbaAtiva] = useState('visao-geral');
 
-  const leadsQuentes = [
-    {
-      id: 1,
-      nome: "Rodrigo Bueno",
-      etapa: "Fechamento Urgente",
-      prioridade: "MÁXIMA",
-      detalhes: "Contrato gerado (10k entrada + 20k boleto). Aguardando assinatura e Pix hoje.",
-      corPrioridade: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-      icon: <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-    },
-    {
-      id: 2,
-      nome: "Tatiana - Tamar Imóveis",
-      etapa: "Aguardando Resposta",
-      prioridade: "MÁXIMA",
-      detalhes: "Deu o 'sim'. Fechou ontem de apresentar ao marido. Cobrar veredito hoje.",
-      corPrioridade: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-      icon: <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-    },
-    {
-      id: 3,
-      nome: "Gustavo",
-      etapa: "Negociação Entrada",
-      prioridade: "ALTA",
-      detalhes: "Sócio Paulo travou a entrada do boleto. Aplicar script de parcelamento da entrada.",
-      corPrioridade: "bg-amber-500/10 text-amber-400 border-amber-500/20",
-      icon: <AlertCircle className="w-5 h-5 text-amber-400" />
-    },
-    {
-      id: 4,
-      nome: "Luciana (Sorocaba)",
-      etapa: "Reunião Agendada",
-      prioridade: "MÉDIA",
-      detalhes: "Alinhamento estratégico com o sócio/marido Marco. Segunda (13/07) às 16:00h.",
-      corPrioridade: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
-      icon: <Calendar className="w-5 h-5 text-indigo-400" />
-    },
-    {
-      id: 5,
-      nome: "Alex",
-      etapa: "Reunião Agendada",
-      prioridade: "MÉDIA",
-      detalhes: "Confirmado com a esposa na mesa. Terça-feira (14/07) às 10:00h. Pré-call dia 13.",
-      corPrioridade: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
-      icon: <Calendar className="w-5 h-5 text-indigo-400" />
-    },
-    {
-      id: 6,
-      nome: "Leonardo",
-      etapa: "No Gelo (Vácuo)",
-      prioridade: "BAIXA",
-      detalhes: "Ofertado Pocket (12k). Sumiu e pediu 15 dias de prazo. Não demonstrar desespero.",
-      corPrioridade: "bg-slate-500/10 text-slate-400 border-slate-500/20",
-      icon: <Clock className="w-5 h-5 text-slate-400" />
-    }
+  const metricas = { contatoInicial: 7, atendimento: 4, agendamento: 2, reunioes: 4 };
+
+  const dadosLeads = [
+    { id: 1, cliente: "Rodrigo Bueno", status: "Fechamento", vgv: "R$ 30.000", condicao: "10k Entrada + 20k Boleto", situacao: "Aguardando Assinatura/Pix", alert: "Urgente", cor: "border-l-4 border-l-emerald-500 bg-emerald-500/5" },
+    { id: 2, cliente: "Tatiana - Tamar Imóveis", status: "Fechamento", vgv: "PCI Padrão", condicao: "A definir (Cartão/Pix)", situacao: "Apresentou ao marido ontem. Cobrar veredito.", alert: "Urgente", cor: "border-l-4 border-l-emerald-500 bg-emerald-500/5" },
+    { id: 3, cliente: "Gustavo", status: "Negociação", vgv: "PCI Boleto", condicao: "Entrada em negociação", situacao: "Sócio Paulo travou entrada. Aplicar script parcelamento.", alert: "Atenção", cor: "border-l-4 border-l-amber-500 bg-amber-500/5" },
+    { id: 4, cliente: "Luciana (Sorocaba)", status: "Agendado", vgv: "12x R$ 3.146", condicao: "Alinhamento com Sócio/Marido", situacao: "Call travada para Segunda-feira (13/07) às 16:00h.", alert: "Cadenciado", cor: "border-l-4 border-l-indigo-500 bg-indigo-500/5" },
+    { id: 5, cliente: "Alex", status: "Agendado", vgv: "PCI Padrão", condicao: "Presença da Esposa na Mesa", situacao: "Call confirmada Terça (14/07) às 10:00h. Pré-call dia 13.", alert: "Cadenciado", cor: "border-l-4 border-l-indigo-500 bg-indigo-500/5" },
+    { id: 6, cliente: "Leonardo", status: "No Gelo", vgv: "Pocket 12k", condicao: "Sem resposta", situacao: "Pediu 15 dias de prazo. Aguardar para não queimar cartucho.", alert: "Frio", cor: "border-l-4 border-l-slate-600 bg-slate-600/5" }
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 font-sans">
-      {/* HEADER */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-slate-800 pb-6 mb-8">
+    <div className="min-h-screen bg-[#141416] text-[#E1E1E6] font-sans flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+      
+      {/* 1. POWER BI TOP BAR (MENU SUPERIOR DE FERRAMENTAS) */}
+      <div className="bg-[#1f1f23] border-b border-[#2d2d34] px-6 py-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 shadow-md">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-            <BarChart3 className="text-indigo-500 w-7 h-7" /> Control Room — Cleber Solar
-          </h1>
-          <p className="text-sm text-slate-400 mt-1">Gestão de Performance Comercial & Pipeline PCI</p>
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+            <h1 className="text-lg font-bold text-white tracking-wide">PCI Performance Report — Microsoft Power BI</h1>
+          </div>
+          <p className="text-xs text-slate-400">Espaço de Trabalho: <span className="text-indigo-400 font-medium">Diretoria Comercial Cleber Solar</span></p>
         </div>
-        <div className="mt-4 md:mt-0 bg-slate-900 border border-slate-800 px-4 py-2 rounded-lg text-xs font-mono text-indigo-400">
-          Data do Sistema: 09/07/2026
+        
+        {/* Ações de Relatório */}
+        <div className="flex items-center gap-2 self-end sm:self-auto text-xs">
+          <button className="flex items-center gap-1.5 bg-[#2d2d34] hover:bg-[#3a3a42] px-3 py-1.5 rounded text-slate-200 transition">
+            <RefreshCw className="w-3.5 h-3.5 text-amber-500" /> Atualizar Dados
+          </button>
+          <button className="flex items-center gap-1.5 bg-[#2d2d34] hover:bg-[#3a3a42] px-3 py-1.5 rounded text-slate-200 transition">
+            <Download className="w-3.5 h-3.5 text-indigo-400" /> Exportar PDF
+          </button>
+          <div className="h-6 w-px bg-[#2d2d34] mx-1"></div>
+          <span className="text-[11px] font-mono text-slate-500">Última carga: Hoje 10:27</span>
         </div>
       </div>
 
-      {/* RIGA DE KPIS (ESTILO POWER BI) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-lg shadow-black/20">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Contato Inicial</p>
-            <h3 className="text-3xl font-bold mt-1 text-white">{metricas.contatoInicial}</h3>
-          </div>
-          <div className="p-3 bg-slate-800 rounded-lg text-slate-400"><PhoneCall className="w-6 h-6" /></div>
-        </div>
-
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-lg shadow-black/20">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Atendimentos Ativos</p>
-            <h3 className="text-3xl font-bold mt-1 text-white">{metricas.atendimento}</h3>
-          </div>
-          <div className="p-3 bg-slate-800 rounded-lg text-indigo-400"><Users className="w-6 h-6" /></div>
-        </div>
-
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-lg shadow-black/20">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Agendamentos</p>
-            <h3 className="text-3xl font-bold mt-1 text-white">{metricas.agendamento}</h3>
-          </div>
-          <div className="p-3 bg-slate-800 rounded-lg text-sky-400"><Calendar className="w-6 h-6" /></div>
-        </div>
-
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-lg shadow-black/20">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Reuniões Feitas</p>
-            <h3 className="text-3xl font-bold mt-1 text-emerald-400">{metricas.reunioesRealizadas}</h3>
-          </div>
-          <div className="p-3 bg-slate-800 rounded-lg text-emerald-400"><BarChart3 className="w-6 h-6" /></div>
-        </div>
-      </div>
-
-      {/* PIPELINE DE ATENDIMENTOS QUENTES */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl shadow-xl overflow-hidden">
-        <div className="px-6 py-4 border-b border-slate-800 bg-slate-900/50 flex justify-between items-center">
-          <h2 className="text-lg font-bold text-white tracking-tight">Esteira Crítica de Negociação</h2>
-          <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Foco Total em Recebimento</span>
-        </div>
-        <div className="divide-y divide-slate-800">
-          {leadsQuentes.map((lead) => (
-            <div key={lead.id} className="p-6 hover:bg-slate-850 transition duration-150 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-              <div className="flex items-start gap-4">
-                <div className="mt-1 p-2 bg-slate-800 rounded-lg shrink-0">
-                  {lead.icon}
+      {/* 2. MAIN CANVAS AREA */}
+      <div className="flex-1 flex flex-col lg:flex-row">
+        
+        {/* CANVAS CENTRAL (ONDE FICAM OS GRÁFICOS E MATRIZES) */}
+        <div className="flex-1 p-6 space-y-6">
+          
+          {/* LINHA DE CARTÕES DE KPI (ESTILO POWER BI CARD VISUAL) */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: "Contatos Iniciais", valor: metricas.contatoInicial, icon: <Users className="w-4 h-4 text-slate-400" /> },
+              { label: "Atendimentos Ativos", valor: metricas.atendimento, icon: <Sliders className="w-4 h-4 text-indigo-400" /> },
+              { label: "Agendamentos Concluídos", valor: metricas.agendamento, icon: <Calendar className="w-4 h-4 text-sky-400" /> },
+              { label: "Reuniões / Diagnósticos", valor: metricas.reunioes, icon: <BarChart2 className="w-4 h-4 text-emerald-400" />, highlight: true }
+            ].map((kpi, idx) => (
+              <div key={idx} className="bg-[#1f1f23] border border-[#2d2d34] rounded p-4 relative shadow-sm hover:border-[#3a3a42] transition">
+                {/* Power BI Visual Header Icons Mockup */}
+                <div className="absolute top-2 right-2 flex items-center gap-1 opacity-0 hover:opacity-100 transition text-slate-500">
+                  <Maximize2 className="w-3 h-3 cursor-pointer hover:text-white" />
+                  <MoreHorizontal className="w-3 h-3 cursor-pointer hover:text-white" />
                 </div>
-                <div>
-                  <div className="flex items-center gap-3 flex-wrap">
-                    <h4 className="text-base font-bold text-white">{lead.nome}</h4>
-                    <span className="text-xs px-2.5 py-0.5 rounded-md font-mono bg-slate-800 text-slate-300 border border-slate-700">
-                      {lead.etapa}
-                    </span>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${lead.corPrioridade}`}>
-                      {lead.prioridade}
-                    </span>
-                  </div>
-                  <p className="text-sm text-slate-400 mt-2 max-w-3xl leading-relaxed">
-                    {lead.detalhes}
-                  </p>
+                <p className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">{kpi.label}</p>
+                <div className="mt-2 flex items-baseline justify-between">
+                  <h3 className={`text-3xl font-black ${kpi.highlight ? 'text-emerald-400' : 'text-white'}`}>{kpi.valor}</h3>
+                  {kpi.icon}
                 </div>
               </div>
-              <div className="lg:text-right shrink-0">
-                {lead.prioridade === "MÁXIMA" && (
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 animate-pulse">
-                    🚀 Fechar Hoje
-                  </span>
-                )}
-                {lead.prioridade === "ALTA" && (
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950">
-                    ⚡ Quebrar Objeção
-                  </span>
-                )}
-                {lead.prioridade === "MÉDIA" && (
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700">
-                    🗓️ Cadenciado
-                  </span>
-                )}
-                {lead.prioridade === "BAIXA" && (
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-950 text-slate-500 border border-slate-900">
-                    🧊 Aguardar
-                  </span>
-                )}
+            ))}
+          </div>
+
+          {/* TABELA MATRIZ (O CORAÇÃO DO RELATÓRIO) */}
+          <div className="bg-[#1f1f23] border border-[#2d2d34] rounded shadow-lg overflow-hidden">
+            {/* Cabeçalho do Bloco de Visual */}
+            <div className="px-5 py-3 border-b border-[#2d2d34] bg-[#242429] flex justify-between items-center">
+              <div>
+                <h2 className="text-sm font-bold text-white tracking-wide">Matriz de Monitoramento Comercial — Funil Quente</h2>
+                <p className="text-[11px] text-slate-400">Filtrado por: Prioridade Máxima & Alta</p>
+              </div>
+              <div className="flex items-center gap-2 text-slate-400">
+                <Maximize2 className="w-3.5 h-3.5 cursor-pointer hover:text-white" title="Modo de foco" />
+                <MoreHorizontal className="w-3.5 h-3.5 cursor-pointer hover:text-white" />
               </div>
             </div>
-          ))}
+
+            {/* Grid de Dados */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr className="bg-[#1a1a1e] text-slate-400 font-semibold border-b border-[#2d2d34]">
+                    <th className="p-4">Lead / Empresa</th>
+                    <th className="p-4">Etapa Funil</th>
+                    <th className="p-4">Ticket Ofertado</th>
+                    <th className="p-4">Condição Estratégica</th>
+                    <th className="p-4">Status da Ação Prática</th>
+                    <th className="p-4 text-center">Farol</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#2d2d34]">
+                  {dadosLeads.map((lead) => (
+                    <tr key={lead.id} className={`hover:bg-[#25252b]/60 transition ${lead.cor}`}>
+                      <td className="p-4 font-bold text-white whitespace-nowrap">{lead.cliente}</td>
+                      <td className="p-4">
+                        <span className="px-2 py-0.5 rounded bg-[#2d2d34] border border-[#3a3a42] text-slate-300">
+                          {lead.status}
+                        </span>
+                      </td>
+                      <td className="p-4 font-mono text-indigo-400 font-semibold">{lead.vgv}</td>
+                      <td className="p-4 text-slate-300">{lead.condicao}</td>
+                      <td className="p-4 text-slate-400 max-w-xs truncate" title={lead.situacao}>{lead.situacao}</td>
+                      <td className="p-4 text-center">
+                        {lead.alert === "Urgente" && (
+                          <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 animate-pulse">
+                            <CheckCircle className="w-3 h-3" /> FECHAR HOJE
+                          </span>
+                        )}
+                        {lead.alert === "Atenção" && (
+                          <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                            <AlertTriangle className="w-3 h-3" /> CONTORNAR
+                          </span>
+                        )}
+                        {lead.alert === "Cadenciado" && (
+                          <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                            <Calendar className="w-3 h-3" /> AGENDADO
+                          </span>
+                        )}
+                        {lead.alert === "Frio" && (
+                          <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded bg-slate-800 text-slate-500 border border-slate-700">
+                            <Clock className="w-3 h-3" /> STANDBY
+                          </span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. POWER BI SIDEBAR FILTER PANE (PAINEL LATERAL DE FILTROS) */}
+        <div className="w-full lg:w-64 bg-[#1f1f23] border-t lg:border-t-0 lg:border-l border-[#2d2d34] p-4 space-y-4 flex flex-col shrink-0 shadow-2xl">
+          <div className="flex items-center justify-between pb-2 border-b border-[#2d2d34]">
+            <span className="text-xs font-bold text-white tracking-wider uppercase flex items-center gap-1.5">
+              <Filter className="w-3.5 h-3.5 text-indigo-400" /> Filtros do Relatório
+            </span>
+            <Sliders className="w-3.5 h-3.5 text-slate-500" />
+          </div>
+
+          {/* Slicers individuais */}
+          <div className="space-y-3 text-xs flex-1">
+            <div>
+              <label className="text-slate-400 block mb-1 font-medium">Mês de Referência</label>
+              <div className="bg-[#2d2d34] border border-[#3a3a42] p-2 rounded flex justify-between items-center cursor-pointer text-white">
+                <span>Julho / 2026</span>
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+              </div>
+            </div>
+
+            <div>
+              <label className="text-slate-400 block mb-1 font-medium">Closer Responsável</label>
+              <div className="bg-[#2d2d34] border border-[#3a3a42] p-2 rounded flex justify-between items-center cursor-pointer text-white">
+                <span>Cleber Solar</span>
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+              </div>
+            </div>
+
+            <div>
+              <label className="text-slate-400 block mb-1 font-medium">Origem do Lead</label>
+              <div className="bg-[#2d2d34] border border-[#3a3a42] p-2 rounded flex justify-between items-center cursor-pointer text-white">
+                <span>Tráfego Pago (PCI)</span>
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+              </div>
+            </div>
+
+            <div className="pt-4">
+              <div className="p-3 bg-slate-900/40 rounded border border-[#2d2d34] text-[11px] text-slate-400 space-y-2">
+                <p className="font-bold text-slate-300 flex items-center gap-1">🎯 Direcionamento Técnico</p>
+                <p className="leading-relaxed">Priorize contatos com marcas <span className="text-emerald-400 font-bold">FECHAR HOJE</span> antes da virada do lote financeiro.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* 4. POWER BI PAGE TABS (BARRA DE ABAS INFERIOR) */}
+      <div className="bg-[#1a1a1e] border-t border-[#2d2d34] px-4 py-1.5 flex items-center gap-1 overflow-x-auto text-xs">
+        <button 
+          onClick={() => setAbaAtiva('visao-geral')}
+          className={`px-4 py-1 rounded font-medium transition whitespace-nowrap ${abaAtiva === 'visao-geral' ? 'bg-[#1f1f23] text-indigo-400 border-b-2 border-b-indigo-500 font-bold' : 'text-slate-400 hover:text-slate-200'}`}
+        >
+          Visão Geral Comercial
+        </button>
+        <button 
+          onClick={() => setAbaAtiva('auditoria-crm')}
+          className={`px-4 py-1 rounded font-medium transition whitespace-nowrap ${abaAtiva === 'auditoria-crm' ? 'bg-[#1f1f23] text-indigo-400 border-b-2 border-b-indigo-500 font-bold' : 'text-slate-400 hover:text-slate-200'}`}
+        >
+          Auditoria de CRM e Leads
+        </button>
+        <button 
+          onClick={() => setAbaAtiva('previsao-vgv')}
+          className={`px-4 py-1 rounded font-medium transition whitespace-nowrap ${abaAtiva === 'previsao-vgv' ? 'bg-[#1f1f23] text-indigo-400 border-b-2 border-b-indigo-500 font-bold' : 'text-slate-400 hover:text-slate-200'}`}
+        >
+          Previsibilidade de Caixa
+        </button>
+      </div>
+
     </div>
   );
 }
