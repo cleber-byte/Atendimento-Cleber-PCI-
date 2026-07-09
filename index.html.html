@@ -1,147 +1,60 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Comercial - Cleber Solar</title>
-    <!-- Tailwind CSS para Design Premium -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js para Gráficos Dinâmicos -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans p-6">
+const dashboardData = {
+  metricasHoje: {
+    contatoInicial: 7,
+    atendimento: 4,
+    agendamento: 2,
+    reunioesRealizadas: 4
+  },
+  leads: [
+    {
+      id: 1,
+      nome: "Rodrigo Bueno",
+      etapa: "Fechamento Urgente",
+      prioridade: "Máxima",
+      detalhes: "Aguardando assinatura do contrato e pagamento hoje. Condição fechada: Entrada de 10k + 20k no boleto.",
+      acaoHoje: "Enviar o link do contrato e travar o pagamento agora."
+    },
+    {
+      id: 2,
+      nome: "Tatiana - Tamar Imóveis",
+      etapa: "Fechamento Urgente",
+      prioridade: "Máxima",
+      detalhes: "Deu o 'sim', mas ficou de apresentar e alinhar com o marido ontem à noite.",
+      acaoHoje: "Cobrar a resposta do veredito do marido para rodar o contrato hoje."
+    },
+    {
+      id: 3,
+      nome: "Gustavo",
+      etapa: "Negociação de Entrada",
+      prioridade: "Alta",
+      detalhes: "Em negociação. O sócio/financeiro Paulo travou dizendo que não quer pagar o valor da entrada no boleto.",
+      acaoHoje: "Aplicar script de contorno de objeção para liberar o pagamento hoje."
+    },
+    {
+      id: 4,
+      nome: "Luciana (Sorocaba)",
+      etapa: "Agendado",
+      prioridade: "Média",
+      detalhes: "Reunião de alinhamento com marido e financeiro travada.",
+      acaoHoje: "Manter em resguardo até Segunda-feira (13/07) às 16:00h."
+    },
+    {
+      id: 5,
+      nome: "Alex",
+      etapa: "Agendado",
+      prioridade: "Média",
+      detalhes: "Confirmado com a esposa. Alarme de pré-configuração para o dia 13/07.",
+      acaoHoje: "Manter em resguardo até Terça-feira (14/07) às 10:00h."
+    },
+    {
+      id: 6,
+      nome: "Leonardo",
+      etapa: "Frio (Vácuo)",
+      prioridade: "Baixa",
+      detalhes: "Ofertado PCI Pocket de 60 dias (12k). Não respondeu e pediu 15 dias de prazo.",
+      acaoHoje: "Deixar no gelo para não demonstrar desespero."
+    }
+  ]
+};
 
-    <!-- Header -->
-    <header class="max-w-7xl mx-auto mb-8 flex justify-between items-center border-b border-slate-800 pb-4">
-        <div>
-            <h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                🦅 Dashboard de Performance <span class="text-xs bg-amber-500/10 text-amber-400 px-2.5 py-0.5 rounded-full border border-amber-500/20 font-medium">Time GM</span>
-            </h1>
-            <p class="text-slate-400 text-sm mt-1">Controle de Pipeline, PCI e Imersão Líder</p>
-        </div>
-        <div class="text-right">
-            <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Atualizado em</p>
-            <p class="text-sm font-medium text-slate-300">Hoje, 18:25</p>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto space-y-8">
-        
-        <!-- Top Cards (Indicadores) -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
-                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Reuniões Realizadas Hoje</p>
-                <p class="text-2xl font-bold text-emerald-400 mt-2">2 Reuniões</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
-                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Leads em Atendimento (PCI)</p>
-                <p class="text-2xl font-bold text-amber-400 mt-2">9 Leads</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
-                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Meets Agendados</p>
-                <p class="text-2xl font-bold text-blue-400 mt-2">2 Agendados</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm">
-                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Links do Líder Enviados</p>
-                <p class="text-2xl font-bold text-purple-400 mt-2">2 Pendentes</p>
-            </div>
-        </div>
-
-        <!-- Seção de Ações Críticas -->
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-            <h3 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider text-rose-400 flex items-center gap-2">
-                🎯 Próximos Alvos & Respostas Críticas
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Leonardo -->
-                <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm font-bold text-white">Leonardo Dias Novaes (PCI)</span>
-                            <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20">Amanhã - 13:00</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-2">
-                            <strong class="text-slate-300">Gatilho de Abordagem:</strong> Alinhamento com a esposa. Focar no gancho de tirar o Leonardo do operacional para dar liberdade de tempo à família.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Gustavo -->
-                <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm font-bold text-white">Gustavo (PCI / Paulo)</span>
-                            <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded border border-blue-500/20">Quarta - 15:50</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-2">
-                            <strong class="text-slate-300">Gatilho de Abordagem:</strong> Resposta do alinhamento interno com o Paulo (Dono). Usar a autoridade do gerente de confiança que validou a engenharia do processo.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Charts Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Gráfico Funil PCI -->
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-                <h3 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider">Pipeline de Vendas: PCI</h3>
-                <div class="relative h-64">
-                    <canvas id="chartPCI"></canvas>
-                </div>
-            </div>
-
-            <!-- Gráfico Funil Líder -->
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-                <h3 class="text-sm font-semibold text-slate-200 mb-4 uppercase tracking-wider">Pipeline de Vendas: Imersão Líder</h3>
-                <div class="relative h-64">
-                    <canvas id="chartLider"></canvas>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Script dos Gráficos Dinâmicos -->
-    <script>
-        const chartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                x: { grid: { display: false }, ticks: { color: '#94a3b8' } },
-                y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', stepSize: 2 } }
-            }
-        };
-
-        // Gráfico PCI
-        new Chart(document.getElementById('chartPCI'), {
-            type: 'bar',
-            data: {
-                labels: ['Contato Inicial', 'Em Atendimento', 'Agendado (Meet)', 'Reuniões Realizadas'],
-                datasets: [{
-                    data: [8, 9, 2, 2],
-                    backgroundColor: ['#475569', '#f59e0b', '#3b82f6', '#10b981'],
-                    borderRadius: 6
-                }]
-            },
-            options: chartOptions
-        });
-
-        // Gráfico Líder
-        new Chart(document.getElementById('chartLider'), {
-            type: 'bar',
-            data: {
-                labels: ['Contato Inicial', 'Em Atendimento', 'Links Enviados'],
-                datasets: [{
-                    data: [1, 4, 2],
-                    backgroundColor: ['#64748b', '#a855f7', '#ec4899'],
-                    borderRadius: 6
-                }]
-            },
-            options: chartOptions
-        });
-    </script>
-</body>
-</html>
+export default dashboardData;
