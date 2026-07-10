@@ -1,223 +1,242 @@
-import openpyxl
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
-from weasyprint import HTML
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCI Comercial - Dashboard de Alta Performance</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
 
-def generate_pipeline_excel():
-    wb = openpyxl.Workbook()
-    ws_pipe = wb.active
-    ws_pipe.title = "Pipeline Ativo"
-    ws_dash = wb.create_sheet(title="Dashboard Resumo")
+  <!-- TOP BAR / HEADER -->
+  <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="bg-amber-600 text-white p-2 rounded-lg font-bold text-xl tracking-wider">
+          <i class="fa-solid <i fa-solid fa-eagle"></i>🦅
+        </div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight text-white">PCI Comercial</h1>
+          <p class="text-xs text-slate-400">Diretoria Comercial — Cleber Solar</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 mr-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+          Operação Ativa
+        </span>
+      </div>
+    </div>
+  </header>
 
-    ws_pipe.views.sheetView[0].showGridLines = True
-    ws_dash.views.sheetView[0].showGridLines = True
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
 
-    PRIMARY_COLOR = "1F1F23"
-    TEXT_WHITE = "FFFFFF"
-    ZEBRA_COLOR = "F8FAFC"
-    BORDER_COLOR = "CBD5E1"
+    <!-- KPI CARDS CONTAINER -->
+    <section class="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <!-- Card 1 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-sm">
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Contatos Iniciais</p>
+          <h3 class="text-2xl font-bold mt-1 text-white">1.000</h3>
+        </div>
+        <div class="p-3 bg-slate-800 rounded-lg text-indigo-400"><i class="fa-solid fa-users text-xl"></i></div>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-sm">
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Atendimentos Ativos</p>
+          <h3 class="text-2xl font-bold mt-1 text-white">800</h3>
+        </div>
+        <div class="p-3 bg-slate-800 rounded-lg text-blue-400"><i class="fa-solid fa-headset text-xl"></i></div>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-sm border-l-4 border-l-emerald-500">
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Faturamento Confirmado</p>
+          <h3 class="text-2xl font-bold mt-1 text-emerald-400">1 GANHO</h3>
+        </div>
+        <div class="p-3 bg-slate-800 rounded-lg text-emerald-400"><i class="fa-solid fa-wallet text-xl"></i></div>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-sm">
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Meetings Agendados</p>
+          <h3 class="text-2xl font-bold mt-1 text-white">2</h3>
+        </div>
+        <div class="p-3 bg-slate-800 rounded-lg text-amber-500"><i class="fa-solid fa-calendar-check text-xl"></i></div>
+      </div>
+    </section>
 
-    FILL_GREEN = "DCFCE7"
-    FONT_GREEN = "15803D"
-    FILL_BLUE = "E0E7FF"
-    FONT_BLUE = "4338CA"
-    FILL_SLATE = "F1F5F9"
-    FONT_SLATE = "475569"
-    FILL_AMBER = "FEF3C7"
-    FONT_AMBER = "B45309"
+    <!-- TWO COLUMN LAYOUT: FUNNEL VS PIPELINE -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- LEFT COLUMN: VISUAL FUNNEL (Guilherme Machado) -->
+      <div class="lg:col-span-1 bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-6">
+        <div>
+          <h2 class="text-md font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-filter text-amber-500"></i> Funil Guilherme Machado
+          </h2>
+          <p class="text-xs text-slate-400 mt-0.5">Régua Matemática de Conversão Padrão</p>
+        </div>
 
-    font_title = Font(name="Arial", size=16, bold=True, color="1E293B")
-    font_header = Font(name="Arial", size=11, bold=True, color=TEXT_WHITE)
-    font_body = Font(name="Arial", size=10, color="334155")
-    font_body_bold = Font(name="Arial", size=10, bold=True, color="1E293B")
-    font_kpi_val = Font(name="Arial", size=20, bold=True, color="4F46E5")
-    font_kpi_lbl = Font(name="Arial", size=9, bold=True, color="64748B")
+        <!-- Funnel Cascades -->
+        <div class="space-y-2 text-center text-xs font-bold tracking-wide uppercase">
+          <!-- Stage 1 -->
+          <div class="w-full bg-slate-800 text-white py-3 rounded-lg border border-slate-700">
+            1. Lead (100%)
+          </div>
+          <!-- Arrow -->
+          <div class="text-amber-500 flex justify-center items-center gap-1 text-[11px] my-1">
+            <i class="fa-solid fa-arrow-down"></i> <span>80% conversão</span>
+          </div>
+          <!-- Stage 2 -->
+          <div class="w-[90%] mx-auto bg-slate-700/80 text-white py-3 rounded-lg border border-slate-600">
+            2. Atendimento
+          </div>
+          <!-- Arrow -->
+          <div class="text-amber-500 flex justify-center items-center gap-1 text-[11px] my-1">
+            <i class="fa-solid fa-arrow-down"></i> <span>40% conversão</span>
+          </div>
+          <!-- Stage 3 -->
+          <div class="w-[80%] mx-auto bg-slate-600/60 text-white py-3 rounded-lg border border-slate-500">
+            3. Agendamento
+          </div>
+          <!-- Arrow -->
+          <div class="text-amber-500 flex justify-center items-center gap-1 text-[11px] my-1">
+            <i class="fa-solid fa-arrow-down"></i> <span>90% conversão</span>
+          </div>
+          <!-- Stage 4 -->
+          <div class="w-[70%] mx-auto bg-slate-500/40 text-slate-300 py-3 rounded-lg border border-slate-600">
+            4. Visita
+          </div>
+          <!-- Arrow -->
+          <div class="text-amber-500 flex justify-center items-center gap-1 text-[11px] my-1">
+            <i class="fa-solid fa-arrow-down"></i> <span>45% conversão</span>
+          </div>
+          <!-- Stage 5 -->
+          <div class="w-[60%] mx-auto bg-slate-400/20 text-slate-400 py-3 rounded-lg border border-slate-700">
+            5. Proposta
+          </div>
+          <!-- Arrow -->
+          <div class="text-amber-500 flex justify-center items-center gap-1 text-[11px] my-1">
+            <i class="fa-solid fa-arrow-down"></i> <span>70% conversão</span>
+          </div>
+          <!-- Stage 6 -->
+          <div class="w-[50%] mx-auto bg-amber-600 text-white py-3.5 rounded-lg shadow-lg shadow-amber-900/20 border border-amber-500 text-sm">
+            6. Venda (~9.07%)
+          </div>
+        </div>
 
-    fill_header = PatternFill(start_color=PRIMARY_COLOR, end_color=PRIMARY_COLOR, fill_type="solid")
-    fill_zebra = PatternFill(start_color=ZEBRA_COLOR, end_color=ZEBRA_COLOR, fill_type="solid")
-    fill_kpi = PatternFill(start_color="F1F5F9", end_color="F1F5F9", fill_type="solid")
-
-    thin_border = Border(
-        left=Side(style='thin', color=BORDER_COLOR), right=Side(style='thin', color=BORDER_COLOR),
-        top=Side(style='thin', color=BORDER_COLOR), bottom=Side(style='thin', color=BORDER_COLOR)
-    )
-
-    ws_dash.cell(row=2, column=2, value="PCI Performance Report").font = font_title
-    ws_dash.cell(row=3, column=2, value="Diretoria Comercial Cleber Solar").font = Font(name="Arial", size=10, italic=True, color="64748B")
-
-    kpis = [
-        ("Contatos Iniciais", 1, 2, 5), 
-        ("Atendimentos Ativos", 1, 2, 7),
-        ("Faturamento Confirmado", "1 Ganho", 4, 5),
-        ("Meetings Agendados", 2, 4, 7)
-    ]
-
-    for label, val, c_start, r_start in kpis:
-        ws_dash.cell(row=r_start, column=c_start, value=label).font = font_kpi_lbl
-        ws_dash.cell(row=r_start+1, column=c_start, value=val).font = font_kpi_val
-        ws_dash.merge_cells(start_row=r_start, start_column=c_start, end_row=r_start, end_column=c_start+1)
-        ws_dash.merge_cells(start_row=r_start+1, start_column=c_start, end_row=r_start+1, end_column=c_start+1)
-        
-        for r in range(r_start, r_start+2):
-            for c in range(c_start, c_start+2):
-                cell = ws_dash.cell(row=r, column=c)
-                cell.fill = fill_kpi
-                cell.border = thin_border
-                cell.alignment = Alignment(horizontal="center", vertical="center")
-
-    headers = ["Lead / Empresa", "Etapa Funil", "Ticket Ofertado", "Condição Estratégica", "Status da Ação Prática", "Farol"]
-    for col_idx, h in enumerate(headers, start=2):
-        cell = ws_pipe.cell(row=2, column=col_idx, value=h)
-        cell.font = font_header
-        cell.fill = fill_header
-        cell.alignment = Alignment(horizontal="center" if col_idx in [3, 4, 7] else "left", vertical="center")
-        cell.border = thin_border
-    ws_pipe.row_dimensions[2].height = 28
-
-    leads_data = [
-        ("Tatiana - Tamar Imóveis", "Onboarding", "PCI Padrão", "Cartão da Empresa", "PAGO! Contrato 100% assinado e liberação concluída.", "GANHO / FATURADO", FILL_GREEN, FONT_GREEN),
-        ("Rodrigo Bueno", "Fechamento", 30073.76, "5k Entrada + 12x Boleto", "Aguardando retorno prometido para hoje (10/07) para rodar os 5k.", "AGUARDANDO HOJE", FILL_AMBER, FONT_AMBER),
-        ("Luciana (Sorocaba)", "Agendado", "12x R$ 3.146", "Alinhamento Sócio/Marido", "Call estratégica travada para Segunda-feira (13/07) às 16:00h.", "AGENDADO", FILL_BLUE, FONT_BLUE),
-        ("Alex", "Agendado", "PCI Padrão", "Presença da Esposa na Mesa", "Call confirmada Terça (14/07) às 10:00h. Pré-call dia 13.", "AGENDADO", FILL_BLUE, FONT_BLUE),
-        ("Gustavo", "No Gelo", "PCI Boleto", "Exigiu 100% sem entrada", "CANCELADO. Proposta recusada por falta de compromisso financeiro.", "RECUSADO", FILL_SLATE, FONT_SLATE),
-        ("Leonardo", "No Gelo", "Pocket 12k", "Sem resposta", "Ofertado Pocket de 60 dias. Sumiu e pediu 15 dias de prazo.", "STANDBY", FILL_SLATE, FONT_SLATE)
-    ]
-
-    for row_idx, data in enumerate(leads_data, start=3):
-        ws_pipe.row_dimensions[row_idx].height = 24
-        is_zebra = (row_idx % 2 == 0)
-        row_fill = fill_zebra if is_zebra else PatternFill(fill_type=None)
-        
-        c_name = ws_pipe.cell(row=row_idx, column=2, value=data[0])
-        c_etapa = ws_pipe.cell(row=row_idx, column=3, value=data[1])
-        c_ticket = ws_pipe.cell(row=row_idx, column=4, value=data[2])
-        c_cond = ws_pipe.cell(row=row_idx, column=5, value=data[3])
-        c_status = ws_pipe.cell(row=row_idx, column=6, value=data[4])
-        c_farol = ws_pipe.cell(row=row_idx, column=7, value=data[5])
-        
-        c_name.font = font_body_bold
-        c_etapa.font = font_body
-        c_ticket.font = font_body
-        c_cond.font = font_body
-        c_status.font = font_body
-        
-        c_etapa.alignment = Alignment(horizontal="center", vertical="center")
-        if isinstance(data[2], (int, float)):
-            c_ticket.number_format = '"R$"#,##0.00'
-            c_ticket.alignment = Alignment(horizontal="right", vertical="center")
-        else:
-            c_ticket.alignment = Alignment(horizontal="center", vertical="center")
-            
-        c_cond.alignment = Alignment(horizontal="left", vertical="center")
-        c_status.alignment = Alignment(horizontal="left", vertical="center")
-        
-        for col in range(2, 7):
-            cell = ws_pipe.cell(row=row_idx, column=col)
-            if is_zebra:
-                cell.fill = row_fill
-            cell.border = thin_border
-            
-        c_farol.font = Font(name="Arial", size=9, bold=True, color=data[7])
-        c_farol.fill = PatternFill(start_color=data[6], end_color=data[6], fill_type="solid")
-        c_farol.alignment = Alignment(horizontal="center", vertical="center")
-        c_farol.border = thin_border
-
-    ws_pipe.column_dimensions['B'].width = 25
-    ws_pipe.column_dimensions['C'].width = 15
-    ws_pipe.column_dimensions['D'].width = 18
-    ws_pipe.column_dimensions['E'].width = 25
-    ws_pipe.column_dimensions['F'].width = 55
-    ws_pipe.column_dimensions['G'].width = 24
-
-    wb.save("Pipeline_PCI_Performance.xlsx")
-    print("[SUCCESS] Excel 'Pipeline_PCI_Performance.xlsx' gerado.")
-
-def generate_funnel_pdf():
-    html_content = """
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-      <meta charset="UTF-8">
-      <style>
-        @page {
-          size: A4; margin: 20mm 15mm; background-color: #fafbfc;
-          @bottom-right { content: "Página " counter(page); font-family: 'Arial', sans-serif; font-size: 8pt; color: #94a3b8; }
-          @bottom-left { content: "PCI Comercial — Manual de Consulta Rápida"; font-family: 'Arial', sans-serif; font-size: 8pt; color: #94a3b8; }
-        }
-        body { font-family: 'Arial', sans-serif; color: #1e293b; background-color: #fafbfc; line-height: 1.5; }
-        .header-container { background-color: #0f172a; color: #ffffff; padding: 24px 20px; border-radius: 6px; margin-bottom: 25px; border-bottom: 4px solid #b45309; }
-        .header-container h1 { margin: 0; font-size: 18pt; font-weight: bold; }
-        .header-container p { margin: 5px 0 0 0; font-size: 10pt; color: #94a3b8; text-transform: uppercase; font-weight: bold; }
-        h2 { font-size: 13pt; font-weight: bold; color: #0f172a; margin-top: 25px; margin-bottom: 15px; padding-left: 8px; border-left: 4px solid #b45309; }
-        .funnel-container { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 30px 20px; text-align: center; }
-        .funnel-stage { margin: 0 auto; padding: 12px; font-weight: bold; font-size: 11pt; border-radius: 4px; text-transform: uppercase; }
-        .stage-lead { width: 90%; background-color: #1e293b; color: #ffffff; }
-        .stage-atendimento { width: 78%; background-color: #334155; color: #ffffff; }
-        .stage-agendamento { width: 66%; background-color: #475569; color: #ffffff; }
-        .stage-visita { width: 54%; background-color: #64748b; color: #ffffff; }
-        .stage-proposta { width: 42%; background-color: #e2e8f0; color: #0f172a; border: 1px solid #cbd5e1; }
-        .stage-venda { width: 30%; background-color: #b45309; color: #ffffff; font-size: 12pt; }
-        .funnel-arrow { text-align: center; font-size: 9.5pt; font-weight: bold; color: #b45309; padding: 6px 0; }
-        .funnel-arrow span { background-color: #fef3c7; padding: 2px 8px; border-radius: 10px; border: 1px solid #fde68a; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 9.5pt; background-color: #ffffff; }
-        th { background-color: #1e293b; color: #ffffff; font-weight: bold; padding: 10px 12px; border: 1px solid #334155; }
-        td { padding: 10px 12px; border: 1px solid #e2e8f0; color: #334155; }
-        tr:nth-child(even) td { background-color: #f8fafc; }
-        .callout-box { background-color: #f8fafc; border-left: 4px solid #1e293b; padding: 15px; margin-top: 20px; border-radius: 0 4px 4px 0; }
-      </style>
-    </head>
-    <body>
-      <div class="header-container">
-        <h1>Funil de Vendas Imobiliário — Guilherme Machado</h1>
-        <p>Estrutura Padrão de Conversão & Auditoria de Processos</p>
+        <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800 text-xs text-slate-400 space-y-2">
+          <p class="font-semibold text-slate-300 flex items-center gap-1"><i class="fa-solid fa-bullseye text-amber-500"></i> Auditoria de Mesa:</p>
+          <p>Se a conversão líquida final da imobiliária estiver abaixo de <b>9.07%</b> de ponta a ponta, há uma falha de script ou atraso crônico na equipe.</p>
+        </div>
       </div>
 
-      <h2>Representação Visual do Funil</h2>
-      <div class="funnel-container">
-        <div class="funnel-stage stage-lead">1. Lead (Topo do Funil)</div>
-        <div class="funnel-arrow"><span>↓ 80% Taxa de Conversão ↓</span></div>
-        <div class="funnel-stage stage-atendimento">2. Atendimento Ativo</div>
-        <div class="funnel-arrow"><span>↓ 40% Taxa de Conversão ↓</span></div>
-        <div class="funnel-stage stage-agendamento">3. Agendamento</div>
-        <div class="funnel-arrow"><span>↓ 90% Taxa de Conversão ↓</span></div>
-        <div class="funnel-stage stage-visita">4. Visita ao Imóvel</div>
-        <div class="funnel-arrow"><span>↓ 45% Taxa de Conversão ↓</span></div>
-        <div class="funnel-stage stage-proposta">5. Proposta Recebida</div>
-        <div class="funnel-arrow"><span>↓ 70% Taxa de Conversão ↓</span></div>
-        <div class="funnel-stage stage-venda">6. Venda (Fim do Funil)</div>
+      <!-- RIGHT COLUMN: PIPELINE TABLE -->
+      <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div>
+            <h2 class="text-md font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-chart-line text-indigo-500"></i> Pipeline Real de Negócios
+            </h2>
+            <p class="text-xs text-slate-400 mt-0.5">Gestão Ativa de Contratos e Alinhamentos</p>
+          </div>
+
+          <!-- Table Wrapper -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="border-b border-slate-800 text-slate-400 font-medium">
+                  <th class="py-3 px-2">Lead</th>
+                  <th class="py-3 px-2">Etapa</th>
+                  <th class="py-3 px-2 text-right">Ticket</th>
+                  <th class="py-3 px-2">Ação Operacional</th>
+                  <th class="py-3 px-2 text-center">Farol</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60">
+                <!-- Row 1 -->
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-2 font-semibold text-white">Tatiana (Tamar)</td>
+                  <td class="py-3.5 px-2 text-slate-300">Onboarding</td>
+                  <td class="py-3.5 px-2 text-right text-emerald-400 font-medium">PCI Padrão</td>
+                  <td class="py-3.5 px-2 text-slate-400">PAGO! Contrato assinado e compensado hoje.</td>
+                  <td class="py-3.5 px-2 text-center">
+                    <span class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 font-bold uppercase tracking-wider text-[10px] border border-emerald-500/20">GANHO</span>
+                  </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-2 font-semibold text-white">Rodrigo Bueno</td>
+                  <td class="py-3.5 px-2 text-slate-300">Fechamento</td>
+                  <td class="py-3.5 px-2 text-right text-white font-medium">R$ 30.073,76</td>
+                  <td class="py-3.5 px-2 text-slate-400">Aguardando retorno para rodar entrada de 5k.</td>
+                  <td class="py-3.5 px-2 text-center">
+                    <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-bold uppercase tracking-wider text-[10px] border border-amber-500/20">AGUARDANDO</span>
+                  </td>
+                </tr>
+                <!-- Row 3 -->
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-2 font-semibold text-white">Luciana (Sorocaba)</td>
+                  <td class="py-3.5 px-2 text-slate-300">Agendado</td>
+                  <td class="py-3.5 px-2 text-right text-slate-300">12x R$ 3.146</td>
+                  <td class="py-3.5 px-2 text-slate-400">Call estratégica travada para segunda às 16h com sócio.</td>
+                  <td class="py-3.5 px-2 text-center">
+                    <span class="px-2 py-1 rounded bg-blue-500/10 text-blue-400 font-bold uppercase tracking-wider text-[10px] border border-blue-500/20">AGENDADO</span>
+                  </td>
+                </tr>
+                <!-- Row 4 -->
+                <tr class="hover:bg-slate-800/30">
+                  <td class="py-3.5 px-2 font-semibold text-white">Alex</td>
+                  <td class="py-3.5 px-2 text-slate-300">Agendado</td>
+                  <td class="py-3.5 px-2 text-right text-slate-300">PCI Padrão</td>
+                  <td class="py-3.5 px-2 text-slate-400">Call na terça 10h confirmada. Esposa estará presente.</td>
+                  <td class="py-3.5 px-2 text-center">
+                    <span class="px-2 py-1 rounded bg-blue-500/10 text-blue-400 font-bold uppercase tracking-wider text-[10px] border border-blue-500/20">AGENDADO</span>
+                  </td>
+                </tr>
+                <!-- Row 5 -->
+                <tr class="hover:bg-slate-800/30 opacity-60">
+                  <td class="py-3.5 px-2 font-semibold text-slate-400">Gustavo</td>
+                  <td class="py-3.5 px-2 text-slate-500">No Gelo</td>
+                  <td class="py-3.5 px-2 text-right text-slate-500">PCI Boleto</td>
+                  <td class="py-3.5 px-2 text-slate-500">CANCELADO. Recusou dar entrada (risco de caixa).</td>
+                  <td class="py-3.5 px-2 text-center">
+                    <span class="px-2 py-1 rounded bg-slate-800 text-slate-500 font-bold uppercase tracking-wider text-[10px] border border-slate-700">RECUSADO</span>
+                  </td>
+                </tr>
+                <!-- Row 6 -->
+                <tr class="hover:bg-slate-800/30 opacity-60">
+                  <td class="py-3.5 px-2 font-semibold text-slate-400">Leonardo</td>
+                  <td class="py-3.5 px-2 text-slate-500">No Gelo</td>
+                  <td class="py-3.5 px-2 text-right text-slate-500">Pocket 12k</td>
+                  <td class="py-3.5 px-2 text-slate-500">Sumiu do chat, pediu prazo de 15 dias. Standby.</td>
+                  <td class="py-3.5 px-2 text-center">
+                    <span class="px-2 py-1 rounded bg-slate-800 text-slate-500 font-bold uppercase tracking-wider text-[10px] border border-slate-700">STANDBY</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-500">
+          <span>Última atualização do sistema: Hoje</span>
+          <span class="font-medium text-slate-400"><i class="fa-solid fa-lock"></i> Dados Criptografados PCI</span>
+        </div>
       </div>
 
-      <h2>Simulação Prática (Base: 1.000 Leads)</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Etapa Inicial</th>
-            <th style="text-align: center;">Taxa</th>
-            <th>Etapa Destino</th>
-            <th>Volumetria Simulada</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><b>1. Lead</b></td><td style="text-align: center;">80%</td><td>2. Atendimento</td><td><b>1.000 Leads</b> geram <b>800</b> Atendimentos</td></tr>
-          <tr><td><b>2. Atendimento</b></td><td style="text-align: center;">40%</td><td>3. Agendamento</td><td><b>800</b> Atendimentos geram <b>320</b> Agendamentos</td></tr>
-          <tr><td><b>3. Agendamento</b></td><td style="text-align: center;">90%</td><td>4. Visita</td><td><b>320</b> Agendamentos geram <b>288</b> Visitas</td></tr>
-          <tr><td><b>4. Visita</b></td><td style="text-align: center;">45%</td><td>5. Proposta</td><td><b>288</b> Visitas geram <b>129,6</b> Propostas</td></tr>
-          <tr><td><b>5. Proposta</b></td><td style="text-align: center;">70%</td><td>6. Venda</td><td><b>129,6</b> Propostas geram <b>90,72 Vendas</b></td></tr>
-        </tbody>
-      </table>
+    </section>
+  </main>
 
-      <div class="callout-box">
-        <h3>🎯 Indicador Global de Performance</h3>
-        <p>A conversão líquida final de Lead para Venda é de <b>9,07%</b>. Qualquer indicador abaixo dessas taxas aponta quebra de processo técnico.</p>
-      </div>
-    </body>
-    </html>
-    """
-    HTML(string=html_content).write_pdf("Funil_Vendas_Guilherme_Machado.pdf")
-    print("[SUCCESS] PDF 'Funil_Vendas_Guilherme_Machado.pdf' gerado.")
-
-if __name__ == "__main__":
-    generate_pipeline_excel()
-    generate_funnel_pdf()
 </body>
 </html>
