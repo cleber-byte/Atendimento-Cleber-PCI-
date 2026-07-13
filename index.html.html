@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCI Comercial - Planejamento e Auditoria</title>
+  <title>PCI Comercial - Dashboard de Auditoria</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter -->
@@ -14,7 +14,7 @@
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen">
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-amber-500 selection:text-slate-950">
 
   <!-- TOP BAR / HEADER -->
   <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
@@ -25,13 +25,13 @@
         </div>
         <div>
           <h1 class="text-lg font-bold tracking-tight text-white">PCI Comercial</h1>
-          <p class="text-xs text-slate-400">Diretoria Comercial — Painel de Controle Obrigatório da Gerência</p>
+          <p class="text-xs text-slate-400">Painel de Controle Operacional — Atualizado em Tempo Real</p>
         </div>
       </div>
       <div class="flex items-center space-x-4">
-        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-500/10 text-red-400 border border-red-500/20">
-          <span class="w-1.5 h-1.5 mr-1.5 bg-red-400 rounded-full animate-pulse"></span>
-          Campos Críticos Controlados
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 mr-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+          Rodrigo Bueno Ganho ✓
         </span>
       </div>
     </div>
@@ -44,218 +44,154 @@
       <!-- Card 1 -->
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-sm">
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Contato Inicial</p>
-          <h3 class="text-2xl font-bold mt-1 text-white">3</h3>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Novos Leads</p>
+          <h3 class="text-2xl font-bold mt-1 text-white">10</h3>
         </div>
-        <div class="p-3 bg-slate-800 rounded-lg text-indigo-400"><i class="fa-solid fa-users text-xl"></i></div>
+        <div class="p-3 bg-slate-800 rounded-lg text-amber-500"><i class="fa-solid fa-filter text-xl"></i></div>
       </div>
       <!-- Card 2 -->
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-sm">
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Atendimento</p>
-          <h3 class="text-2xl font-bold mt-1 text-white">6</h3>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Contato Inicial</p>
+          <h3 class="text-2xl font-bold mt-1 text-indigo-400">4</h3>
         </div>
-        <div class="p-3 bg-slate-800 rounded-lg text-blue-400"><i class="fa-solid fa-headset text-xl"></i></div>
+        <div class="p-3 bg-slate-800 rounded-lg text-indigo-400"><i class="fa-solid fa-users text-xl"></i></div>
       </div>
       <!-- Card 3 -->
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-sm">
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Agendamento</p>
-          <h3 class="text-2xl font-bold mt-1 text-emerald-400">2</h3>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Em Atendimento</p>
+          <h3 class="text-2xl font-bold mt-1 text-blue-400">6</h3>
+        </div>
+        <div class="p-3 bg-slate-800 rounded-lg text-blue-400"><i class="fa-solid fa-headset text-xl"></i></div>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-sm border-l-4 border-l-emerald-500">
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Agendamentos Ativos</p>
+          <h3 class="text-2xl font-bold mt-1 text-emerald-400">3</h3>
         </div>
         <div class="p-3 bg-slate-800 rounded-lg text-emerald-400"><i class="fa-solid fa-calendar-check text-xl"></i></div>
       </div>
-      <!-- Card 4 -->
-      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between shadow-sm border-l-4 border-l-red-500">
-        <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Exigências Gerência</p>
-          <h3 class="text-2xl font-bold mt-1 text-red-400">10 Itens</h3>
-        </div>
-        <div class="p-3 bg-slate-800 rounded-lg text-red-400"><i class="fa-solid fa-list-check text-xl"></i></div>
-      </div>
     </section>
 
-    <!-- TWO COLUMN LAYOUT: FUNNEL/REMINDERS VS AGENDA -->
+    <!-- TWO COLUMN LAYOUT -->
     <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       
-      <!-- LEFT COLUMN: VISUAL FUNNEL & MANAGER CHEATSHEET -->
+      <!-- LEFT COLUMN: RADAR DE LINKS E CONTRATOS (CRÍTICO) -->
       <div class="lg:col-span-1 space-y-6">
         
-        <!-- FUNNEL COMPONENT (UPDATED WITH 7 STAGES) -->
+        <!-- SEÇÃO RADAR -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
           <div>
-            <h2 class="text-md font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-filter text-amber-500"></i> Funil de Vendas Completo
+            <h2 class="text-md font-bold text-amber-500 flex items-center gap-2">
+              <i class="fa-solid fa-satellite-dish animate-pulse"></i> Radar de Links e Contratos
             </h2>
-            <p class="text-xs text-slate-400 mt-0.5">Visão Sequencial Exigida pela Gerência</p>
+            <p class="text-xs text-slate-400 mt-0.5">Acompanhamento de transações e assinaturas financeiras</p>
           </div>
           
-          <div class="space-y-1.5 text-center text-[11px] font-bold tracking-wide uppercase">
-            <!-- Stage 1 -->
-            <div class="w-full bg-slate-800 text-slate-300 py-2 rounded border border-slate-700">
-              1. Lead
+          <div class="space-y-3">
+            <!-- Item Vanderson -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 space-y-2">
+              <div class="flex justify-between items-center">
+                <span class="text-xs font-bold text-white">Vanderson</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">Análise de Contrato</span>
+              </div>
+              <p class="text-[11px] text-slate-400 leading-relaxed">
+                <i class="fa-solid fa-file-contract text-slate-500 mr-1"></i> Só falta revisar o contrato físico para despachar imediatamente ao setor financeiro.
+              </p>
             </div>
-            <div class="text-slate-600 text-[9px]"><i class="fa-solid fa-angle-down"></i></div>
-            <!-- Stage 2 -->
-            <div class="w-[94%] mx-auto bg-slate-700 text-slate-200 py-2 rounded border border-slate-600">
-              2. Contato Inicial (3)
-            </div>
-            <div class="text-slate-600 text-[9px]"><i class="fa-solid fa-angle-down"></i></div>
-            <!-- Stage 3 -->
-            <div class="w-[88%] mx-auto bg-slate-600 text-slate-200 py-2 rounded border border-slate-500">
-              3. Atendimento (6)
-            </div>
-            <div class="text-slate-600 text-[9px]"><i class="fa-solid fa-angle-down"></i></div>
-            <!-- Stage 4 -->
-            <div class="w-[82%] mx-auto bg-slate-500 text-white py-2 rounded border border-slate-400">
-              4. Agendamento (2)
-            </div>
-            <div class="text-slate-600 text-[9px]"><i class="fa-solid fa-angle-down"></i></div>
-            <!-- Stage 5 -->
-            <div class="w-[76%] mx-auto bg-blue-600 text-white py-2 rounded border border-blue-500">
-              5. Meeting Realizado (3)
-            </div>
-            <div class="text-slate-600 text-[9px]"><i class="fa-solid fa-angle-down"></i></div>
-            <!-- Stage 6 -->
-            <div class="w-[70%] mx-auto bg-red-950/40 text-red-400 py-2 rounded border border-red-900/50">
-              6. No Show
-            </div>
-            <div class="text-slate-600 text-[9px]"><i class="fa-solid fa-angle-down"></i></div>
-            <!-- Stage 7 -->
-            <div class="w-[64%] mx-auto bg-emerald-600 text-white py-2.5 rounded shadow-lg shadow-emerald-950/50 border border-emerald-500 text-xs">
-              7. Ganho ✓
+
+            <!-- Item A&H -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 space-y-2">
+              <div class="flex justify-between items-center">
+                <span class="text-xs font-bold text-white">A&H Transações Imob.</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">Link Encaminhado</span>
+              </div>
+              <p class="text-[11px] text-slate-400 leading-relaxed">
+                <i class="fa-solid fa-link text-slate-500 mr-1"></i> Link de pagamento gerado e enviado. Monitorar gateway para confirmar a transação.
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- PERSISTENT CHEATSHEET FOR MANAGER REQUIREMENTS -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
-          <div>
-            <h2 class="text-md font-bold text-red-400 flex items-center gap-2">
-              <i class="fa-solid fa-clipboard-list"></i> Checklist de Coleta Obrigatória
-            </h2>
-            <p class="text-xs text-slate-400 mt-0.5">Não esqueça de preencher estes 10 campos por lead:</p>
-          </div>
-          
-          <div class="grid grid-cols-1 gap-2 text-xs">
-            <div class="flex items-center gap-2 p-2 bg-slate-950/50 rounded border border-slate-800"><i class="fa-solid fa-id-card text-amber-500 w-4"></i> <span><b>Nome / Nome Imobiliária</b></span></div>
-            <div class="flex items-center gap-2 p-2 bg-slate-950/50 rounded border border-slate-800"><i class="fa-solid fa-calendar-day text-blue-400 w-4"></i> <span><b>Data do Lead</b> (Entrada no funil)</span></div>
-            <div class="flex items-center gap-2 p-2 bg-slate-950/50 rounded border border-slate-800"><i class="fa-solid fa-share-nodes text-indigo-400 w-4"></i> <span><b>Origem</b> (Tráfego, Orgânico, Parceria)</span></div>
-            <div class="flex items-center gap-2 p-2 bg-slate-950/50 rounded border border-slate-800"><i class="fa-solid fa-chart-bar text-cyan-400 w-4"></i> <span><b>Jc30 e gerais</b> (Métricas comerciais)</span></div>
-            <div class="flex items-center gap-2 p-2 bg-slate-950/50 rounded border border-slate-800"><i class="fa-solid fa-video text-purple-400 w-4"></i> <span><b>Meeting realizada</b> (Sim / Não)</span></div>
-            <div class="flex items-center gap-2 p-2 bg-slate-950/50 rounded border border-slate-800"><i class="fa-solid fa-user-slash text-red-400 w-4"></i> <span><b>No show</b> (Falta na reunião)</span></div>
-            <div class="flex items-center gap-2 p-2 bg-slate-950/50 rounded border border-slate-800"><i class="fa-solid fa-cart-shopping text-emerald-400 w-4"></i> <span><b>Venda / Venda que fiz</b> (Fechamento)</span></div>
-            <div class="flex items-center gap-2 p-2 bg-slate-950/50 rounded border border-slate-800"><i class="fa-solid fa-money-check-dollar text-teal-400 w-4"></i> <span><b>Data de pagamento</b></span></div>
-            <div class="flex items-center gap-2 p-2 bg-slate-950/50 rounded border border-slate-800"><i class="fa-solid fa-clock text-slate-400 w-4"></i> <span><b>Data</b> (Do acompanhamento atual)</span></div>
+        <!-- LEMBRETE COMPROMISSO FINANCEIRO -->
+        <div class="bg-emerald-950/20 border border-emerald-900/50 rounded-xl p-6 space-y-3">
+          <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+            <i class="fa-solid fa-bell"></i> ALERTA DE CRÉDITO: AMANHÃ
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            <b>Rodrigo Bueno (ImoBueno):</b> Contrato devidamente assinado hoje e já processado no Sucesso do Cliente (Gisele). 
+          </p>
+          <div class="p-2.5 bg-emerald-950/60 border border-emerald-800 rounded text-[11px] text-emerald-300 font-medium">
+            <i class="fa-solid fa-credit-card mr-1"></i> Cobrar comprovante do pagamento da entrada amanhã cedo (Assim que virar o teto do cartão).
           </div>
         </div>
 
       </div>
 
-      <!-- RIGHT COLUMN: SCHEDULE & TASKS WITH EXTENDED DATA FIELDS -->
+      <!-- RIGHT COLUMN: AGENDA DE AGENDAMENTOS E PIPELINE -->
       <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between">
         <div class="space-y-4">
           <div>
             <h2 class="text-md font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-calendar-days text-indigo-500"></i> Painel de Controle Operacional Completo
+              <i class="fa-solid fa-calendar-days text-indigo-500"></i> Painel Comercial e Reuniões de Diagnóstico
             </h2>
-            <p class="text-xs text-slate-400 mt-0.5">Visão unificada das exigências e próximos passos da semana</p>
+            <p class="text-xs text-slate-400 mt-0.5">Foco total de execução para os 3 agendamentos estratégicos e contas ganhas</p>
           </div>
 
-          <!-- Table Wrapper -->
+          <!-- Table -->
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs border-collapse">
               <thead>
                 <tr class="border-b border-slate-800 text-slate-400 font-medium">
-                  <th class="py-3 px-2">Nome / Imobiliária</th>
-                  <th class="py-3 px-2">Data / Lead</th>
-                  <th class="py-3 px-2">Origem / Jc30</th>
-                  <th class="py-3 px-2">Meeting / No Show</th>
-                  <th class="py-3 px-2">Ação / Venda / Pagamento</th>
+                  <th class="py-3 px-2">Lead / Imobiliária</th>
+                  <th class="py-3 px-2">Estágio do Funil</th>
+                  <th class="py-3 px-2">Detalhes e Escopo</th>
+                  <th class="py-3 px-2">Ação Crítica</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800/60 text-[11px]">
                 
-                <!-- Row: Luciana -->
+                <!-- ROW: RODRIGO BUENO (GANHO) -->
+                <tr class="bg-emerald-950/10 hover:bg-emerald-950/20 font-medium">
+                  <td class="py-3.5 px-2 font-semibold text-emerald-400">Rodrigo Bueno<br><span class="text-slate-400 text-[10px]">ImoBueno</span></td>
+                  <td class="py-3.5 px-2"><span class="px-2 py-0.5 rounded font-bold bg-emerald-500 text-slate-950 uppercase text-[9px]">7. Ganho ✓</span></td>
+                  <td class="py-3.5 px-2 text-slate-300">Contrato assinado hoje.<br><span class="text-slate-500 text-[10px]">Onboarding entregue para Gisele (CS).</span></td>
+                  <td class="py-3.5 px-2 text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Monitorar entrada amanhã.</td>
+                </tr>
+
+                <!-- ROW: RAFAEL ENNES -->
                 <tr class="hover:bg-slate-800/30">
-                  <td class="py-3.5 px-2 font-semibold text-white">Luciana<br><span class="text-slate-400">Sorocaba Imóveis</span></td>
-                  <td class="py-3.5 px-2 text-slate-300"><b>Ação:</b> Seg 13/07 - 16h<br><span class="text-slate-500">Lead: 05/07</span></td>
-                  <td class="py-3.5 px-2 text-slate-300"><span class="text-indigo-400 font-medium">Tráfego</span><br><span class="text-slate-500">Gerais: OK</span></td>
-                  <td class="py-3.5 px-2"><span class="text-emerald-400 font-medium">Agendada</span><br><span class="text-slate-500">No Show: Não</span></td>
-                  <td class="py-3.5 px-2">
-                    <p class="text-slate-300">Meet estratégico com marido/sócio.</p>
-                    <span class="text-slate-500">Venda: Pendente | Pagto: [Aguardando]</span>
-                  </td>
+                  <td class="py-3.5 px-2 font-semibold text-white">Rafael Ennes<br><span class="text-slate-400 text-[10px]">Karioca Imóveis</span></td>
+                  <td class="py-3.5 px-2"><span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold">4. Agendamento</span></td>
+                  <td class="py-3.5 px-2 text-slate-300">Diagnóstico de Expansão.<br><span class="text-slate-500 text-[10px]">Matriz Z. Oeste + Flamengo / Copacabana.</span></td>
+                  <td class="py-3.5 px-2 text-amber-400 font-medium"><i class="fa-solid fa-video"></i> Travar Meet com ele e a nova sócia.</td>
                 </tr>
 
-                <!-- Row: Leticia (CONFLITO) -->
-                <tr class="hover:bg-slate-800/30 bg-red-950/10">
-                  <td class="py-3.5 px-2 font-semibold text-slate-200">Letícia<br><span class="text-slate-500">[Individual]</span></td>
-                  <td class="py-3.5 px-2 text-red-400 font-medium"><b>Ação:</b> Seg 13/07 - 16h<br><span class="text-slate-500">Lead: 07/07</span></td>
-                  <td class="py-3.5 px-2 text-slate-300"><span class="text-indigo-400 font-medium">Orgânico</span><br><span class="text-slate-500">Gerais: Em análise</span></td>
-                  <td class="py-3.5 px-2"><span class="text-amber-400 font-medium">Retorno Call</span><br><span class="text-slate-500">No Show: Não</span></td>
-                  <td class="py-3.5 px-2">
-                    <p class="text-red-400 font-medium"><i class="fa-solid fa-circle-exclamation animate-pulse"></i> Conflito de horário com Luciana.</p>
-                    <span class="text-slate-500">Venda: Não concluída</span>
-                  </td>
-                </tr>
-
-                <!-- Row: Alex -->
+                <!-- ROW: ALEX ROCHA -->
                 <tr class="hover:bg-slate-800/30">
-                  <td class="py-3.5 px-2 font-semibold text-white">Alex<br><span class="text-slate-400">[Particular]</span></td>
-                  <td class="py-3.5 px-2 text-slate-300"><b>Ação:</b> Ter 14/07 - 10h<br><span class="text-slate-500">Lead: 06/07</span></td>
-                  <td class="py-3.5 px-2 text-slate-300"><span class="text-indigo-400 font-medium">Indicação</span><br><span class="text-slate-500">Jc30: Qualificado</span></td>
-                  <td class="py-3.5 px-2"><span class="text-emerald-400 font-medium">Agendada</span><br><span class="text-slate-500">No Show: Não</span></td>
-                  <td class="py-3.5 px-2">
-                    <p class="text-slate-300">Meet com presença da esposa.</p>
-                    <span class="text-slate-500">Venda: Em andamento</span>
-                  </td>
+                  <td class="py-3.5 px-2 font-semibold text-white">Alex Rocha<br><span class="text-slate-400 text-[10px]">Prime</span></td>
+                  <td class="py-3.5 px-2"><span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold">4. Agendamento</span></td>
+                  <td class="py-3.5 px-2 text-slate-300">Reunião de Alinhamento.<br><span class="text-indigo-400 text-[10px] font-bold"><i class="fa-solid fa-user-group"></i> Presença obrigatória da esposa na mesa.</span></td>
+                  <td class="py-3.5 px-2 text-slate-300">Confirmar link do Meet de diagnóstico.</td>
                 </tr>
 
-                <!-- Row: Melina -->
+                <!-- ROW: LUCIANA -->
                 <tr class="hover:bg-slate-800/30">
-                  <td class="py-3.5 px-2 font-semibold text-white">Melina<br><span class="text-slate-400">Seguros & Consórcio</span></td>
-                  <td class="py-3.5 px-2 text-slate-300"><b>Ação:</b> Ter 14/07 - 14h<br><span class="text-slate-500">Lead: 09/07</span></td>
-                  <td class="py-3.5 px-2 text-slate-300"><span class="text-indigo-400 font-medium">Parceria</span><br><span class="text-slate-500">Gerais: Imob do Zero</span></td>
-                  <td class="py-3.5 px-2"><span class="text-blue-400 font-medium">Ligação</span><br><span class="text-slate-500">No Show: Não</span></td>
-                  <td class="py-3.5 px-2">
-                    <p class="text-slate-300">Alinhamento técnico operacional.</p>
-                    <span class="text-slate-500">Venda: Diagnóstico</span>
-                  </td>
+                  <td class="py-3.5 px-2 font-semibold text-white">Luciana<br><span class="text-slate-400 text-[10px]">Particular</span></td>
+                  <td class="py-3.5 px-2"><span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold">4. Agendamento</span></td>
+                  <td class="py-3.5 px-2 text-slate-300">Meet Estratégico.<br><span class="text-indigo-400 text-[10px] font-bold"><i class="fa-solid fa-user-group"></i> Presença do marido / sócio investidor.</span></td>
+                  <td class="py-3.5 px-2 text-slate-300">Garantir que ambos estejam na sala.</td>
                 </tr>
-
-                <!-- Row: Rodrigo Bueno -->
-                <tr class="hover:bg-slate-800/30 bg-amber-950/10">
-                  <td class="py-3.5 px-2 font-semibold text-white">Rodrigo Bueno<br><span class="text-slate-400">Bueno Imóveis</span></td>
-                  <td class="py-3.5 px-2 text-amber-400"><b>Ação:</b> Ter 14/07 - Fluxo<br><span class="text-slate-500">Lead: 04/07</span></td>
-                  <td class="py-3.5 px-2 text-slate-300"><span class="text-indigo-400 font-medium">Tráfego</span><br><span class="text-amber-500 font-medium">Jc30: Hot Lead</span></td>
-                  <td class="py-3.5 px-2"><span class="text-emerald-400 font-bold">REALIZADA ✓</span><br><span class="text-slate-500">No Show: Não</span></td>
-                  <td class="py-3.5 px-2">
-                    <p class="text-amber-400 font-semibold">Cobrar assinatura e link (Virada do cartão).</p>
-                    <span class="text-amber-400">Venda que fiz: R$ 30.073,76 | Pagto: 14/07</span>
-                  </td>
-                </tr>
-
-                <!-- Row: Caco Martinhago -->
-                <tr class="hover:bg-slate-800/30">
-                  <td class="py-3.5 px-2 font-semibold text-slate-300">Caco Martinhago<br><span class="text-slate-500">[Prospecção]</span></td>
-                  <td class="py-3.5 px-2 text-slate-500"><b>Ação:</b> A definir<br><span class="text-slate-600">Lead: 10/07</span></td>
-                  <td class="py-3.5 px-2 text-slate-500"><span class="text-slate-500">Outros</span><br><span class="text-slate-600">Gerais: Prospecção</span></td>
-                  <td class="py-3.5 px-2 text-slate-500"><span>Pendente</span><br><span>No Show: [A definir]</span></td>
-                  <td class="py-3.5 px-2 text-slate-500">
-                    <p>Realizar ligação de acompanhamento de carteira.</p>
-                    <span>Venda: Não | Pagto: [Pendente]</span>
-                  </td>
-                </tr>
-
               </tbody>
             </table>
           </div>
         </div>
 
         <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-500">
-          <span>Campos exigidos pela gerência salvos na estrutura padrão</span>
-          <span class="font-medium text-slate-400"><i class="fa-solid fa-eye"></i> Visibilidade de Ponta a Ponta</span>
+          <span>Campos de auditoria do PCI integrados às exigências gerenciais.</span>
+          <span class="font-medium text-slate-400"><i class="fa-solid fa-shield-halved"></i> 100% Auditado</span>
         </div>
       </div>
 
