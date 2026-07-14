@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCI Comercial - Dashboard de Auditoria</title>
+  <title>PCI Comercial - Dashboard de Vendas</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter -->
@@ -16,7 +16,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-amber-500 selection:text-slate-950">
 
-  <!-- TOP BAR -->
+  <!-- TOP BAR / HEADER -->
   <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
@@ -27,9 +27,9 @@
         </div>
       </div>
       <div class="flex items-center space-x-4">
-        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-          <span class="w-1.5 h-1.5 mr-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
-          Meet com Alex Rocha Realizado ✓
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-2 h-2 mr-2 bg-emerald-400 rounded-full animate-ping"></span>
+          DIA HISTÓRICO: DUAS ENTRADAS CONFIRMADAS HOJE! 💸
         </span>
       </div>
     </div>
@@ -37,8 +37,17 @@
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
 
-    <!-- KPI CARDS -->
+    <!-- KPI CARDS CONTAINER -->
     <section class="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <!-- Vendas Fechadas (Destaque) -->
+      <div class="bg-slate-900 border border-emerald-500 rounded-xl p-5 flex items-center justify-between border-l-4 border-l-emerald-500 shadow-lg shadow-emerald-950/10">
+        <div>
+          <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Vendas Ganhas & Pagas (Julho)</p>
+          <h3 class="text-3xl font-extrabold mt-1 text-white">3 JC30</h3>
+        </div>
+        <div class="p-3 bg-emerald-950/50 rounded-lg text-emerald-400"><i class="fa-solid fa-circle-check text-2xl"></i></div>
+      </div>
+      <!-- Card 2 -->
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between">
         <div>
           <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Novos Leads</p>
@@ -46,56 +55,51 @@
         </div>
         <div class="p-3 bg-slate-800 rounded-lg text-amber-500"><i class="fa-solid fa-filter text-xl"></i></div>
       </div>
+      <!-- Card 3 -->
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between">
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Contato Inicial</p>
-          <h3 class="text-2xl font-bold mt-1 text-indigo-400">4</h3>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Contato Inicial / Atendimento</p>
+          <h3 class="text-2xl font-bold mt-1 text-indigo-400">11</h3>
         </div>
         <div class="p-3 bg-slate-800 rounded-lg text-indigo-400"><i class="fa-solid fa-users text-xl"></i></div>
       </div>
+      <!-- Card 4 -->
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between">
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Em Atendimento</p>
-          <h3 class="text-2xl font-bold mt-1 text-blue-400">7</h3>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Follow-up Ativo</p>
+          <h3 class="text-2xl font-bold mt-1 text-blue-400">4</h3>
         </div>
         <div class="p-3 bg-slate-800 rounded-lg text-blue-400"><i class="fa-solid fa-headset text-xl"></i></div>
       </div>
-      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between border-l-4 border-l-amber-500">
-        <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Meets de Hoje</p>
-          <h3 class="text-2xl font-bold mt-1 text-amber-400">1</h3>
-        </div>
-        <div class="p-3 bg-slate-800 rounded-lg text-amber-500"><i class="fa-solid fa-calendar-check text-xl"></i></div>
-      </div>
     </section>
 
-    <!-- MAIN GRID -->
+    <!-- MAIN TWO COLUMN LAYOUT -->
     <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       
-      <!-- LEFT: RADAR DE LINKS E COMPROMISSOS -->
+      <!-- LEFT COLUMN: RADAR & PENDING TASKS -->
       <div class="lg:col-span-1 space-y-6">
         
         <!-- RADAR FINANCEIRO -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
           <h2 class="text-md font-bold text-amber-500 flex items-center gap-2">
-            <i class="fa-solid fa-satellite-dish"></i> Radar de Fechamentos (Monitorar Hoje)
+            <i class="fa-solid fa-satellite-dish animate-pulse"></i> Radar de Links e Contratos
           </h2>
           <div class="space-y-3">
-            <!-- RODRIGO BUENO -->
-            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-[11px] border-l-2 border-l-emerald-500">
-              <div class="flex justify-between font-bold text-white">
-                <span>Rodrigo Bueno (ImoBueno)</span>
-                <span class="text-emerald-400 font-bold">Cobrar Entrada 💳</span>
-              </div>
-              <p class="text-slate-400 mt-1">Hoje é o dia de virada do limite dele. Acompanhar a transação do sinal de entrada.</p>
-            </div>
             <!-- VANDERSON -->
             <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-[11px] border-l-2 border-l-emerald-500">
               <div class="flex justify-between font-bold text-white">
                 <span>Vanderson</span>
                 <span class="text-emerald-400 font-bold">Fechamento 💸</span>
               </div>
-              <p class="text-slate-400 mt-1">PCI com Visita. Solicitou 3x sem juros. Link e contrato de fechamento enviados para hoje.</p>
+              <p class="text-slate-400 mt-1">PCI com Visita. Solicitou 3x sem juros. Link e contrato enviados. Confirmando fechamento.</p>
+            </div>
+            <!-- ANDERSON -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-[11px] border-l-2 border-l-slate-700">
+              <div class="flex justify-between font-bold text-white">
+                <span>Anderson (João Pessoa)</span>
+                <span class="text-slate-500">A&H Transações</span>
+              </div>
+              <p class="text-slate-400 mt-1">Link enviado ontem. Fazer contato de follow-up para resgatar status comercial.</p>
             </div>
           </div>
         </div>
@@ -106,66 +110,99 @@
             <i class="fa-solid fa-thumbtack"></i> LEMBRETES DE OUTROS ATENDIMENTOS
           </h3>
           <div class="space-y-2 text-slate-300">
-            <p><b>• Luciana Lino:</b> Resposta sobre caixa/investimento agendada para <b>Sexta-feira (17/07)</b>.</p>
+            <p><b>• Luciana Lino:</b> Reunião feita hoje. Resposta sobre caixa/investimento agendada para <b>Sexta-feira (17/07)</b>.</p>
             <p><b>• Carlos Calvão (Bauru):</b> Tradicional 30+ anos. Apresentar proposta/agendar Meet (Quinta 14h ou Sexta 10h).</p>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: REUNIÕES DE HOJE -->
-      <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between">
-        <div>
-          <h2 class="text-md font-bold text-white mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-clock-history text-indigo-500"></i> Cronograma de Reuniões de Diagnóstico (Hoje)
-          </h2>
+      <!-- RIGHT COLUMN: MEETS & CLOSED SALES -->
+      <div class="lg:col-span-2 space-y-6">
+        
+        <!-- SECTION 1: HISTÓRICO DE VENDAS (JULHO/2026) -->
+        <div class="bg-slate-900 border border-emerald-500 rounded-xl p-6 shadow-md shadow-emerald-950/5">
+          <div class="flex justify-between items-center mb-4">
+            <div>
+              <h2 class="text-md font-bold text-emerald-400 flex items-center gap-2">
+                <i class="fa-solid fa-award animate-bounce"></i> Galeria de Contratos Fechados & Pagos
+              </h2>
+              <p class="text-xs text-slate-400 mt-0.5">Vendas assinadas, pagas e entregues para Sucesso do Cliente / CS</p>
+            </div>
+            <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-lg text-xs font-bold border border-emerald-500/20">3 Contratos Ativos</span>
+          </div>
+
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs border-collapse">
               <thead>
                 <tr class="border-b border-slate-800 text-slate-400 font-medium">
-                  <th class="py-3 px-2">Imobiliária / Lead</th>
-                  <th class="py-3 px-2">Horário Confirmado</th>
-                  <th class="py-3 px-2">Pilar e Estratégia do Papo</th>
-                  <th class="py-3 px-2">Status / Link</th>
+                  <th class="py-2.5 px-2">Cliente / Imobiliária</th>
+                  <th class="py-2.5 px-2">Data de Fechamento</th>
+                  <th class="py-2.5 px-2">Produto</th>
+                  <th class="py-2.5 px-2 text-right">Status Financeiro</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800/60 text-[11px]">
-                <!-- RAFAEL ENNES (EM INSTANTES) -->
-                <tr class="bg-amber-500/5 hover:bg-amber-500/10">
-                  <td class="py-3.5 px-2 font-semibold text-white">Rafael Ennes<br><span class="text-slate-400 text-[10px]">Karioca Imóveis</span></td>
-                  <td class="py-3.5 px-2 text-amber-400 font-bold"><i class="fa-regular fa-clock animate-pulse"></i> EM INSTANTES — 11:00h</td>
-                  <td class="py-3.5 px-2 text-slate-300">Modelagem de Expansão.<br><span class="text-indigo-400 font-semibold"><i class="fa-solid fa-user-group"></i> Sócia Renata confirmada para a mesa.</span></td>
-                  <td class="py-3.5 px-2 text-emerald-400 font-medium"><i class="fa-solid fa-circle-play animate-pulse"></i> Chamar Renata/Rafael no Whats</td>
-                </tr>
-                <!-- ALEX ROCHA (REALIZADO) -->
-                <tr class="bg-slate-950/40 text-slate-400">
-                  <td class="py-3.5 px-2 font-semibold text-slate-400">Alex Rocha<br><span class="text-slate-500 text-[10px]">Prime</span></td>
-                  <td class="py-3.5 px-2 text-indigo-400 font-bold"><i class="fa-solid fa-check"></i> Realizada Hoje</td>
-                  <td class="py-3.5 px-2 text-slate-400">Diagnóstico Estratégico.<br><span class="text-slate-500 text-[10px]">Presença da Esposa. Alinhamento de processos concluído.</span></td>
-                  <td class="py-3.5 px-2 text-indigo-400 font-semibold"><i class="fa-solid fa-hourglass"></i> Montando Proposta / Follow-up</td>
-                </tr>
-                <!-- LUCIANA LINO -->
-                <tr class="text-slate-400">
-                  <td class="py-3.5 px-2 font-semibold text-slate-400">Luciana Lino<br><span class="text-slate-500 text-[10px]">Lino Imóveis Vale</span></td>
-                  <td class="py-3.5 px-2 text-indigo-400">Retorno: 17/07</td>
-                  <td class="py-3.5 px-2 text-slate-400">Análise de Fluxo de Caixa.<br><span class="text-slate-500 text-[10px]">Alinhando teto de parcelamento.</span></td>
-                  <td class="py-3.5 px-2 text-slate-500"><i class="fa-solid fa-clock"></i> Follow-up na Sexta</td>
+                <!-- RAFAEL ENNES -->
+                <tr class="bg-emerald-950/5 hover:bg-emerald-950/10">
+                  <td class="py-3 px-2 font-semibold text-white">Rafael Ennes <br><span class="text-[10px] text-slate-400 font-normal">Karioca Imóveis</span></td>
+                  <td class="py-3 px-2 text-slate-300">12/07/2026</td>
+                  <td class="py-3 px-2 font-bold text-amber-500">JC30</td>
+                  <td class="py-3 px-2 text-right text-emerald-400 font-bold"><span class="bg-emerald-500/20 px-2 py-0.5 rounded text-[10px] border border-emerald-500/30"><i class="fa-solid fa-circle-check"></i> Pago & Ativado</span></td>
                 </tr>
                 <!-- RODRIGO BUENO -->
-                <tr class="bg-emerald-950/10 text-slate-400">
-                  <td class="py-3.5 px-2 font-semibold text-emerald-500">Rodrigo Bueno<br><span class="text-slate-500 text-[10px]">ImoBueno</span></td>
-                  <td class="py-3.5 px-2 text-emerald-400 font-bold">Ativação Hoje</td>
-                  <td class="py-3.5 px-2 text-slate-500">Contrato assinado.<br><span class="text-slate-500 text-[10px]">Onboarding Gisele (CS) engatilhado.</span></td>
-                  <td class="py-3.5 px-2 text-emerald-500 font-bold"><i class="fa-solid fa-check-double"></i> Ganho no Sistema</td>
+                <tr class="bg-emerald-950/5 hover:bg-emerald-950/10">
+                  <td class="py-3 px-2 font-semibold text-white">Rodrigo Bueno <br><span class="text-[10px] text-slate-400 font-normal">ImoBueno</span></td>
+                  <td class="py-3 px-2 text-slate-300">03/07/2026</td>
+                  <td class="py-3 px-2 font-bold text-amber-500">JC30</td>
+                  <td class="py-3 px-2 text-right text-emerald-400 font-bold"><span class="bg-emerald-500/20 px-2 py-0.5 rounded text-[10px] border border-emerald-500/30"><i class="fa-solid fa-circle-check"></i> Entrada Paga & Ativado</span></td>
+                </tr>
+                <!-- TATIANE -->
+                <tr class="hover:bg-slate-800/20">
+                  <td class="py-3 px-2 font-semibold text-white">Tatiane <br><span class="text-[10px] text-slate-400 font-normal">Particular</span></td>
+                  <td class="py-3 px-2 text-slate-300">03/07/2026</td>
+                  <td class="py-3 px-2 font-bold text-amber-500">JC30</td>
+                  <td class="py-3 px-2 text-right text-emerald-400 font-bold"><span class="bg-emerald-500/10 px-2 py-0.5 rounded text-[10px] border border-emerald-500/20">Pago & Ativo</span></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-500">
-          <span>PCI Comercial — Auditoria de fechamento e inteligência operacional.</span>
-          <span class="font-medium text-slate-400"><i class="fa-solid fa-shield-halved"></i> 100% Auditado</span>
+        <!-- SECTION 2: MEETS & PIPELINE STATUS -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+          <h2 class="text-md font-bold text-white mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-clock-history text-indigo-500"></i> Status do Pipeline de Hoje
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="border-b border-slate-800 text-slate-400 font-medium">
+                  <th class="py-2.5 px-2">Lead / Imobiliária</th>
+                  <th class="py-2.5 px-2">Horário / Data</th>
+                  <th class="py-2.5 px-2">Estratégia do Pipeline</th>
+                  <th class="py-2.5 px-2 text-right">Ação Crítica</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 text-[11px]">
+                <!-- ALEX ROCHA -->
+                <tr class="bg-indigo-950/10">
+                  <td class="py-3 px-2 font-semibold text-white">Alex Rocha <br><span class="text-slate-400 text-[10px]">Prime</span></td>
+                  <td class="py-3 px-2 text-indigo-400 font-bold"><i class="fa-solid fa-check"></i> Realizado Hoje</td>
+                  <td class="py-3 px-2 text-slate-300">Sócio e Esposa presentes. Reunião concluída com sucesso.</td>
+                  <td class="py-3 px-2 text-right text-amber-400 font-bold">Enviar Proposta & Follow</td>
+                </tr>
+                <!-- LUCIANA LINO -->
+                <tr>
+                  <td class="py-3 px-2 font-semibold text-slate-400">Luciana Lino <br><span class="text-slate-500 text-[10px]">Lino Imóveis Vale</span></td>
+                  <td class="py-3 px-2 text-slate-400">Sexta (17/07)</td>
+                  <td class="py-3 px-2 text-slate-400">Análise de Fluxo de Caixa. Alinhando investimento.</td>
+                  <td class="py-3 px-2 text-right text-indigo-400 font-semibold">Aguardando Resposta</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+
       </div>
 
     </section>
