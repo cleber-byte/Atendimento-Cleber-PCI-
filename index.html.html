@@ -7,7 +7,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -23,13 +23,13 @@
         <div class="bg-amber-600 text-white p-2 rounded-lg font-bold text-xl tracking-wider">🦅</div>
         <div>
           <h1 class="text-lg font-bold tracking-tight text-white">PCI Comercial</h1>
-          <p class="text-xs text-slate-400">Painel Operacional — Terça-Feira, 14 de Julho de 2026</p>
+          <p class="text-xs text-slate-400">Painel Operacional — Quinta-Feira, 16 de Julho de 2026</p>
         </div>
       </div>
       <div class="flex items-center space-x-4">
-        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-          <span class="w-2 h-2 mr-2 bg-emerald-400 rounded-full animate-ping"></span>
-          DIA HISTÓRICO: DUAS ENTRADAS CONFIRMADAS HOJE! 💸
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          <span class="w-2 h-2 mr-2 bg-amber-400 rounded-full animate-ping"></span>
+          Foco do Dia: Apresentação Guilherme (11:00) & Meet Miriam (14:00) 🎯
         </span>
       </div>
     </div>
@@ -39,35 +39,35 @@
 
     <!-- KPI CARDS CONTAINER -->
     <section class="grid grid-cols-1 md:grid-cols-4 gap-5">
-      <!-- Vendas Fechadas (Destaque) -->
-      <div class="bg-slate-900 border border-emerald-500 rounded-xl p-5 flex items-center justify-between border-l-4 border-l-emerald-500 shadow-lg shadow-emerald-950/10">
+      <!-- Vendas Fechadas -->
+      <div class="bg-slate-900 border border-emerald-500 rounded-xl p-5 flex items-center justify-between border-l-4 border-l-emerald-500">
         <div>
-          <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Vendas Ganhas & Pagas (Julho)</p>
+          <p class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Vendas Ganhas (Julho)</p>
           <h3 class="text-3xl font-extrabold mt-1 text-white">3 JC30</h3>
         </div>
         <div class="p-3 bg-emerald-950/50 rounded-lg text-emerald-400"><i class="fa-solid fa-circle-check text-2xl"></i></div>
       </div>
-      <!-- Card 2 -->
-      <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between">
+      <!-- Reuniões do Dia -->
+      <div class="bg-slate-900 border border-amber-500 rounded-xl p-5 flex items-center justify-between border-l-4 border-l-amber-500">
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Novos Leads</p>
-          <h3 class="text-2xl font-bold mt-1 text-white">10</h3>
+          <p class="text-xs font-semibold text-amber-400 uppercase tracking-wider">Meets Hoje</p>
+          <h3 class="text-2xl font-bold mt-1 text-white">2 Confirmados</h3>
         </div>
-        <div class="p-3 bg-slate-800 rounded-lg text-amber-500"><i class="fa-solid fa-filter text-xl"></i></div>
+        <div class="p-3 bg-amber-950/50 rounded-lg text-amber-500"><i class="fa-solid fa-calendar-day text-xl"></i></div>
       </div>
-      <!-- Card 3 -->
+      <!-- Contatos Ativos -->
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between">
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Contato Inicial / Atendimento</p>
-          <h3 class="text-2xl font-bold mt-1 text-indigo-400">11</h3>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Atendimentos no Funil</p>
+          <h3 class="text-2xl font-bold mt-1 text-indigo-400">15</h3>
         </div>
         <div class="p-3 bg-slate-800 rounded-lg text-indigo-400"><i class="fa-solid fa-users text-xl"></i></div>
       </div>
-      <!-- Card 4 -->
+      <!-- Follow-up Pendente -->
       <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex items-center justify-between">
         <div>
-          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Follow-up Ativo</p>
-          <h3 class="text-2xl font-bold mt-1 text-blue-400">4</h3>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Ligações Hoje</p>
+          <h3 class="text-2xl font-bold mt-1 text-blue-400">1 (Isabel)</h3>
         </div>
         <div class="p-3 bg-slate-800 rounded-lg text-blue-400"><i class="fa-solid fa-headset text-xl"></i></div>
       </div>
@@ -79,39 +79,75 @@
       <!-- LEFT COLUMN: RADAR & PENDING TASKS -->
       <div class="lg:col-span-1 space-y-6">
         
-        <!-- RADAR FINANCEIRO -->
+        <!-- RADAR DE ACESSOS E COMPROMISSOS -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
           <h2 class="text-md font-bold text-amber-500 flex items-center gap-2">
-            <i class="fa-solid fa-satellite-dish animate-pulse"></i> Radar de Links e Contratos
+            <i class="fa-solid fa-satellite-dish animate-pulse"></i> Radar Ativo de Leads e Propostas
           </h2>
           <div class="space-y-3">
-            <!-- VANDERSON -->
-            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-[11px] border-l-2 border-l-emerald-500">
+            
+            <!-- WILLER BORGES (Destaque Quente) -->
+            <div class="p-3 bg-emerald-950/10 rounded-lg border border-emerald-500 text-[11px] border-l-4 border-l-emerald-500">
               <div class="flex justify-between font-bold text-white">
-                <span>Vanderson</span>
-                <span class="text-emerald-400 font-bold">Fechamento 💸</span>
+                <span>Willer Borges (Lopes Class)</span>
+                <span class="text-emerald-400 font-bold">Prog. 20/07 ⏳</span>
               </div>
-              <p class="text-slate-400 mt-1">PCI com Visita. Solicitou 3x sem juros. Link e contrato enviados. Confirmando fechamento.</p>
+              <p class="text-slate-300 mt-1">Acordo de 12x R$ 3.146,69 no boleto fechado via e-mail. Aguardando envio dos dados para emissão do contrato na segunda.</p>
             </div>
-            <!-- ANDERSON -->
+
+            <!-- ARTHUR FRANCESCO -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-[11px] border-l-2 border-l-amber-500">
+              <div class="flex justify-between font-bold text-white">
+                <span>Arthur Francesco (Class Imóveis)</span>
+                <span class="text-amber-400 font-bold">Proposta Enviada ✉️</span>
+              </div>
+              <p class="text-slate-400 mt-1">E-mail com proposta do PCI enviado para: <i>imoveisclassgoiania@gmail.com</i>. Realizar follow-up de recebimento.</p>
+            </div>
+
+            <!-- CARLOS GALVÃO -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-[11px] border-l-2 border-l-indigo-500">
+              <div class="flex justify-between font-bold text-white">
+                <span>Carlos Galvão</span>
+                <span class="text-indigo-400 font-bold">Novo no Radar 🛰️</span>
+              </div>
+              <p class="text-slate-400 mt-1">Lead inserido no radar de negociação. Preparar abordagem de diagnóstico operacional do PCI.</p>
+            </div>
+
+            <!-- VANDERSON -->
             <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-[11px] border-l-2 border-l-slate-700">
               <div class="flex justify-between font-bold text-white">
-                <span>Anderson (João Pessoa)</span>
-                <span class="text-slate-500">A&H Transações</span>
+                <span>Vanderson</span>
+                <span class="text-slate-400">Boleto Enviado</span>
               </div>
-              <p class="text-slate-400 mt-1">Link enviado ontem. Fazer contato de follow-up para resgatar status comercial.</p>
+              <p class="text-slate-400 mt-1">Aguardando assinatura do contrato e pagamento do 1º boleto da condição especial.</p>
+            </div>
+
+            <!-- ALEX ROCHA -->
+            <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-[11px] border-l-2 border-l-slate-700">
+              <div class="flex justify-between font-bold text-white">
+                <span>Alex Rocha (Prime)</span>
+                <span class="text-slate-400">Aguardando Retorno</span>
+              </div>
+              <p class="text-slate-400 mt-1">Verificar se respondeu à mensagem de alinhamento de Onboarding enviado para Agosto.</p>
             </div>
           </div>
         </div>
 
-        <!-- OUTROS ACOMPANHAMENTOS -->
+        <!-- ACOMPANHAMENTO FUTURO -->
         <div class="bg-indigo-950/20 border border-indigo-900/50 rounded-xl p-6 text-xs space-y-3">
           <h3 class="font-bold text-indigo-400 flex items-center gap-1.5">
-            <i class="fa-solid fa-thumbtack"></i> LEMBRETES DE OUTROS ATENDIMENTOS
+            <i class="fa-solid fa-calendar-days"></i> Radar Próximos Dias (Fim de Semana)
           </h3>
-          <div class="space-y-2 text-slate-300">
-            <p><b>• Luciana Lino:</b> Reunião feita hoje. Resposta sobre caixa/investimento agendada para <b>Sexta-feira (17/07)</b>.</p>
-            <p><b>• Carlos Calvão (Bauru):</b> Tradicional 30+ anos. Apresentar proposta/agendar Meet (Quinta 14h ou Sexta 10h).</p>
+          <div class="space-y-3 text-slate-300">
+            <!-- TAREFA SANDRO -->
+            <div class="p-2.5 bg-slate-900/60 rounded border border-amber-500/30 text-[11px] border-l-2 border-l-amber-500">
+              <p class="font-bold text-white flex justify-between">
+                <span>📞 Ligar para Sandro</span>
+                <span class="text-amber-400">Amanhã (Sexta) 11:00</span>
+              </p>
+              <p class="text-slate-400 mt-1 text-[10px]">Indicação do <b>Marcos Toyama</b>. Ligar para apresentar e posicionar o PCI.</p>
+            </div>
+            <p><b>• Biank Imóveis:</b> Retomar contato amanhã (Sexta) para tentar agendar Meet.</p>
           </div>
         </div>
       </div>
@@ -119,84 +155,79 @@
       <!-- RIGHT COLUMN: MEETS & CLOSED SALES -->
       <div class="lg:col-span-2 space-y-6">
         
-        <!-- SECTION 1: HISTÓRICO DE VENDAS (JULHO/2026) -->
-        <div class="bg-slate-900 border border-emerald-500 rounded-xl p-6 shadow-md shadow-emerald-950/5">
+        <!-- AGENDA DE REUNIÕES (HOJE) -->
+        <div class="bg-slate-900 border border-amber-500/30 rounded-xl p-6">
           <div class="flex justify-between items-center mb-4">
             <div>
-              <h2 class="text-md font-bold text-emerald-400 flex items-center gap-2">
-                <i class="fa-solid fa-award animate-bounce"></i> Galeria de Contratos Fechados & Pagos
+              <h2 class="text-md font-bold text-amber-500 flex items-center gap-2">
+                <i class="fa-solid fa-video"></i> Cronograma de Meets (Hoje - Quinta-Feira)
               </h2>
-              <p class="text-xs text-slate-400 mt-0.5">Vendas assinadas, pagas e entregues para Sucesso do Cliente / CS</p>
+              <p class="text-xs text-slate-400 mt-0.5">Sessões confirmadas na sala do Zoom</p>
             </div>
-            <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-lg text-xs font-bold border border-emerald-500/20">3 Contratos Ativos</span>
           </div>
 
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs border-collapse">
               <thead>
                 <tr class="border-b border-slate-800 text-slate-400 font-medium">
-                  <th class="py-2.5 px-2">Cliente / Imobiliária</th>
-                  <th class="py-2.5 px-2">Data de Fechamento</th>
-                  <th class="py-2.5 px-2">Produto</th>
-                  <th class="py-2.5 px-2 text-right">Status Financeiro</th>
+                  <th class="py-2.5 px-2">Lead / Imobiliária</th>
+                  <th class="py-2.5 px-2">Horário</th>
+                  <th class="py-2.5 px-2">Estratégia do Papo</th>
+                  <th class="py-2.5 px-2 text-right">Ação</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-800/60 text-[11px]">
-                <!-- RAFAEL ENNES -->
-                <tr class="bg-emerald-950/5 hover:bg-emerald-950/10">
-                  <td class="py-3 px-2 font-semibold text-white">Rafael Ennes <br><span class="text-[10px] text-slate-400 font-normal">Karioca Imóveis</span></td>
-                  <td class="py-3 px-2 text-slate-300">12/07/2026</td>
-                  <td class="py-3 px-2 font-bold text-amber-500">JC30</td>
-                  <td class="py-3 px-2 text-right text-emerald-400 font-bold"><span class="bg-emerald-500/20 px-2 py-0.5 rounded text-[10px] border border-emerald-500/30"><i class="fa-solid fa-circle-check"></i> Pago & Ativado</span></td>
+                <!-- MEET GUILHERME -->
+                <tr class="bg-amber-950/20 hover:bg-amber-950/30">
+                  <td class="py-3 px-2 font-bold text-white flex items-center gap-1.5">
+                    <span class="text-amber-500">🔥</span> Guilherme <br><span class="text-[10px] text-slate-400 font-normal">Apresentação + Start</span>
+                  </td>
+                  <td class="py-3 px-2 text-amber-400 font-extrabold text-xs">11:00h</td>
+                  <td class="py-3 px-2 text-slate-200">Apresentar o escopo completo do PCI e formalizar o início do projeto.</td>
+                  <td class="py-3 px-2 text-right"><span class="bg-amber-500 text-slate-950 font-bold px-2 py-1 rounded text-[10px] animate-pulse">Entrar na Sala 🔗</span></td>
                 </tr>
-                <!-- RODRIGO BUENO -->
-                <tr class="bg-emerald-950/5 hover:bg-emerald-950/10">
-                  <td class="py-3 px-2 font-semibold text-white">Rodrigo Bueno <br><span class="text-[10px] text-slate-400 font-normal">ImoBueno</span></td>
-                  <td class="py-3 px-2 text-slate-300">03/07/2026</td>
-                  <td class="py-3 px-2 font-bold text-amber-500">JC30</td>
-                  <td class="py-3 px-2 text-right text-emerald-400 font-bold"><span class="bg-emerald-500/20 px-2 py-0.5 rounded text-[10px] border border-emerald-500/30"><i class="fa-solid fa-circle-check"></i> Entrada Paga & Ativado</span></td>
-                </tr>
-                <!-- TATIANE -->
-                <tr class="hover:bg-slate-800/20">
-                  <td class="py-3 px-2 font-semibold text-white">Tatiane <br><span class="text-[10px] text-slate-400 font-normal">Particular</span></td>
-                  <td class="py-3 px-2 text-slate-300">03/07/2026</td>
-                  <td class="py-3 px-2 font-bold text-amber-500">JC30</td>
-                  <td class="py-3 px-2 text-right text-emerald-400 font-bold"><span class="bg-emerald-500/10 px-2 py-0.5 rounded text-[10px] border border-emerald-500/20">Pago & Ativo</span></td>
+                <!-- MEET MIRIAM -->
+                <tr class="hover:bg-slate-800/20 text-slate-300">
+                  <td class="py-3 px-2 font-semibold">Miriam & Marido <br><span class="text-[10px] text-slate-400 font-normal">Lino Imóveis Vale</span></td>
+                  <td class="py-3 px-2 font-bold">14:00h</td>
+                  <td class="py-3 px-2 text-slate-400">Diagnóstico técnico do CRM e Integração de Leads. <br><span class="text-[9px] text-indigo-400 font-bold">Cleber + Diretor de Operações</span></td>
+                  <td class="py-3 px-2 text-right"><span class="bg-indigo-950/60 text-indigo-400 px-2 py-1 rounded text-[10px] border border-indigo-500/20">Link Enviado</span></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- SECTION 2: MEETS & PIPELINE STATUS -->
+        <!-- GALERIA DE CONTRATOS ATIVOS -->
         <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
-          <h2 class="text-md font-bold text-white mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-clock-history text-indigo-500"></i> Status do Pipeline de Hoje
-          </h2>
+          <div class="flex justify-between items-center mb-4">
+            <div>
+              <h2 class="text-md font-bold text-slate-300 flex items-center gap-2">
+                <i class="fa-solid fa-award"></i> Contratos Ativos de Julho
+              </h2>
+            </div>
+          </div>
+
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs border-collapse">
-              <thead>
-                <tr class="border-b border-slate-800 text-slate-400 font-medium">
-                  <th class="py-2.5 px-2">Lead / Imobiliária</th>
-                  <th class="py-2.5 px-2">Horário / Data</th>
-                  <th class="py-2.5 px-2">Estratégia do Pipeline</th>
-                  <th class="py-2.5 px-2 text-right">Ação Crítica</th>
+              <tbody class="divide-y divide-slate-800/60 text-[11px] text-slate-400">
+                <!-- RAFAEL ENNES -->
+                <tr class="hover:bg-slate-800/20">
+                  <td class="py-2.5 px-2 font-semibold text-white">Rafael Ennes (Karioca Imóveis)</td>
+                  <td class="py-2.5 px-2">JC30</td>
+                  <td class="py-2.5 px-2 text-right text-emerald-400 font-bold">Ativado</td>
                 </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800/60 text-[11px]">
-                <!-- ALEX ROCHA -->
-                <tr class="bg-indigo-950/10">
-                  <td class="py-3 px-2 font-semibold text-white">Alex Rocha <br><span class="text-slate-400 text-[10px]">Prime</span></td>
-                  <td class="py-3 px-2 text-indigo-400 font-bold"><i class="fa-solid fa-check"></i> Realizado Hoje</td>
-                  <td class="py-3 px-2 text-slate-300">Sócio e Esposa presentes. Reunião concluída com sucesso.</td>
-                  <td class="py-3 px-2 text-right text-amber-400 font-bold">Enviar Proposta & Follow</td>
+                <!-- RODRIGO BUENO -->
+                <tr class="hover:bg-slate-800/20">
+                  <td class="py-2.5 px-2 font-semibold text-white">Rodrigo Bueno (ImoBueno)</td>
+                  <td class="py-2.5 px-2">JC30</td>
+                  <td class="py-2.5 px-2 text-right text-emerald-400 font-bold">Ativado</td>
                 </tr>
-                <!-- LUCIANA LINO -->
-                <tr>
-                  <td class="py-3 px-2 font-semibold text-slate-400">Luciana Lino <br><span class="text-slate-500 text-[10px]">Lino Imóveis Vale</span></td>
-                  <td class="py-3 px-2 text-slate-400">Sexta (17/07)</td>
-                  <td class="py-3 px-2 text-slate-400">Análise de Fluxo de Caixa. Alinhando investimento.</td>
-                  <td class="py-3 px-2 text-right text-indigo-400 font-semibold">Aguardando Resposta</td>
+                <!-- TATIANE -->
+                <tr class="hover:bg-slate-800/20">
+                  <td class="py-2.5 px-2 font-semibold text-white">Tatiane (Particular)</td>
+                  <td class="py-2.5 px-2">JC30</td>
+                  <td class="py-2.5 px-2 text-right text-emerald-400 font-bold">Ativado</td>
                 </tr>
               </tbody>
             </table>
